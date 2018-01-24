@@ -20,9 +20,8 @@ public class PassengerFlight {
     private Date depatureTime;
     private int flightTime;
 
-    public PassengerFlight(String pId, String fId, String sAirport, String dAirport, Date dTime, int fTime){
+    public PassengerFlight(String pId, String sAirport, String dAirport, Date dTime, int fTime){
         this.passengerId = pId;
-        this.flightId = fId;
         this.sourceAirport = sAirport;
         this.destinationAirport = dAirport;
         this.depatureTime = dTime;
