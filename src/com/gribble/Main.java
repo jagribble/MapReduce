@@ -51,7 +51,8 @@ public class Main {
         System.out.println("----------------------");
         getPassangerData();
         try {
-            ArrayList<MapperOutput> mapperOutput = ThreadClass.mapper(lines);
+            ThreadClass.getAirportHashMap(airportLines);
+            ArrayList<MapperOutput> mapperOutput = ThreadClass.mapper2(lines);
             System.out.println(ThreadClass.shuffler(mapperOutput));
         } catch (ParseException e) {
             e.printStackTrace();
