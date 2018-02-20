@@ -11,6 +11,15 @@ public class ThreadClass {
 
     static HashMap<String,Airport> airportHashMap = new HashMap<String, Airport>();
 
+    static String makeCSVRow(String[] values){
+        String csvString = "";
+        for(int x=0;x<values.length;x++){
+            csvString += values[x] +",";
+        }
+        csvString += "\n";
+        return csvString;
+    }
+
     /**
      * Maps the airports in a hash map to enable them to be esaily looked up
      *
@@ -40,6 +49,18 @@ public class ThreadClass {
         ArrayList<MapperOutput> mapValue = new ArrayList<MapperOutput>();
         for(int x=0;x<mapperLines.size();x++){
             String[] row = mapperLines.get(x).split(",");
+            String startingAirpot = row[2];
+            String flightId = row[1];
+            if(startingAirpot.isEmpty()){
+                System.err.println("Error at "+(x+1)+": starting airpot missing");
+            } else if(flightId.isEmpty()){
+                System.err.println("Error at "+(x+1)+": Flight ID missing");
+            }else if(!airportHashMap.containsKey(startingAirpot)){
+                System.out.println("Error at "+(x+1)+": Starting airport does not exist in airport list ("+startingAirpot+")");
+            } else{
+                MapperOutput keyValue = new MapperOutput(startingAirpot,flightId);
+                mapValue.add(keyValue);
+            }
 
         }
         return mapValue;
@@ -68,9 +89,9 @@ public class ThreadClass {
             Date depatureTime = new Date(Integer.valueOf(row[4]));
             int flightTime = Integer.valueOf(row[5]);
             if(passengerId.isEmpty() || startingAirpot.isEmpty() || destinationAirport.isEmpty() || flightTime == 0 ){
-                System.out.println("Error at "+(x+1)+": Values missing");
+                System.err.println("Error at "+(x+1)+": Values missing");
             } else if(!airportHashMap.containsKey(startingAirpot)){
-                System.out.println("Error at "+(x+1)+": Starting airport does not exist in airport list ("+startingAirpot+")");
+                System.err.println("Error at "+(x+1)+": Starting airport does not exist in airport list ("+startingAirpot+")");
             } else{
                 PassengerFlight passengerFlight = new PassengerFlight(passengerId,startingAirpot,destinationAirport,depatureTime,flightTime);
                 MapperOutput keyValue = new MapperOutput(flightId,passengerFlight);
@@ -112,33 +133,52 @@ public class ThreadClass {
         return hashMap;
     }
 
+    static ReducerOuput reducer1(String key, ArrayList<Object> values){
+        String airportName = ThreadClass.airportHashMap.get(key).getAirportName();
+
+        String reducerString = "Airport:              "+airportName+"\n";
+        reducerString += "Airport Code:         "+ key+"\n";
+        reducerString += "Flights From Airport: "+ values.size()+"\n";
+        String[] options = {airportName,key,String.valueOf(values.size())};
+        String rCSV = makeCSVRow(options);
+        return new ReducerOuput(reducerString,rCSV);
+    }
+
     /** Reducer 2
      *
      * Set up output for each key
      * **/
-    static String reducer2(String key, ArrayList<Object> values){
+    static ReducerOuput reducer2(String key, ArrayList<Object> values){
         PassengerFlight flight = (PassengerFlight) values.get(0);
-        String reducerOutput = "";
-        reducerOutput += "Flight ID:            "+key+"\n";
-        reducerOutput += "Flight Depature Time: "+flight.getDepatureTime()+"\n";
-        reducerOutput += "Flight time:          "+flight.getFlightTime()+"\n";
-        reducerOutput += "Source Airport:       "+flight.getSourceAirport()+"\n";
-        reducerOutput += "Destination Airport:  "+flight.getDestinationAirport()+"\n";
-        reducerOutput += "Passengers:           "+"\n";
+        String reducerString = "";
+        reducerString += "Flight ID:            "+key+"\n";
+        reducerString += "Flight Depature Time: "+flight.getDepatureTime()+"\n";
+        reducerString += "Flight time:          "+flight.getFlightTime()+"\n";
+        reducerString += "Source Airport:       "+flight.getSourceAirport()+"\n";
+        reducerString += "Destination Airport:  "+flight.getDestinationAirport()+"\n";
+        reducerString += "Passengers:           "+"\n";
+        String passengerString = "";
         for(int x=0;x<values.size();x++){
             PassengerFlight passenger = (PassengerFlight) values.get(x);
-            reducerOutput += "                    "+passenger.getPassengerId()+"\n";
+            reducerString += "                    "+passenger.getPassengerId()+"\n";
+            passengerString +=passenger.getPassengerId()+";";
         }
-        return reducerOutput;
+        String[] options = {key,String.valueOf(flight.getDepatureTime()),String.valueOf(flight.getFlightTime()),
+                flight.getSourceAirport(),flight.getDestinationAirport(),passengerString};
+        String rCSV = makeCSVRow(options);
+        return new ReducerOuput(reducerString,rCSV);
+
 
     }
 
-    static String reducer3(String key, ArrayList<Object> values){
+    static ReducerOuput reducer3(String key, ArrayList<Object> values){
         PassengerFlight flight = (PassengerFlight) values.get(0);
-        String reducerOutput = "";
-        reducerOutput += "Flight ID:            "+key+"\n";
-        reducerOutput += "Passengers on Flight: "+values.size();
-        return reducerOutput;
+        String reducerString = "";
+        reducerString += "Flight ID:            "+key+"\n";
+        reducerString += "Passengers on Flight: "+values.size();
+        String[] options = {key,String.valueOf(values.size())};
+        String rCSV = makeCSVRow(options);
+        return new ReducerOuput(reducerString,rCSV);
 
     }
 
