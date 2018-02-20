@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Main {
 
@@ -53,7 +54,26 @@ public class Main {
         try {
             ThreadClass.getAirportHashMap(airportLines);
             ArrayList<MapperOutput> mapperOutput = ThreadClass.mapper2(lines);
-            System.out.println(ThreadClass.shuffler(mapperOutput));
+            HashMap<String, ArrayList<Object>> shuffledOutput = ThreadClass.shuffler(mapperOutput);
+            System.out.println(shuffledOutput);
+            ArrayList<String> listofKeys = new ArrayList<String>(shuffledOutput.keySet());
+            ArrayList<String> reducer2Output = new ArrayList<String>();
+            ArrayList<String> reducer3Output = new ArrayList<String>();
+            System.out.println("-----------------------------------");
+
+            for(int x=0;x<listofKeys.size();x++){
+                String output = ThreadClass.reducer2(listofKeys.get(x),  shuffledOutput.get(listofKeys.get(x)));
+                System.out.println(output);
+                System.out.println("-----------------------------------");
+                reducer2Output.add(output);
+            }
+
+            for(int x=0;x<listofKeys.size();x++){
+                String output = ThreadClass.reducer3(listofKeys.get(x),  shuffledOutput.get(listofKeys.get(x)));
+                System.out.println(output);
+                System.out.println("-----------------------------------");
+                reducer3Output.add(output);
+            }
         } catch (ParseException e) {
             e.printStackTrace();
         }

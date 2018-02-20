@@ -116,8 +116,32 @@ public class ThreadClass {
      *
      * Set up output for each key
      * **/
-    static void reducer2(String key, ArrayList<MapperOutput> mapper){
+    static String reducer2(String key, ArrayList<Object> values){
+        PassengerFlight flight = (PassengerFlight) values.get(0);
+        String reducerOutput = "";
+        reducerOutput += "Flight ID:            "+key+"\n";
+        reducerOutput += "Flight Depature Time: "+flight.getDepatureTime()+"\n";
+        reducerOutput += "Flight time:          "+flight.getFlightTime()+"\n";
+        reducerOutput += "Source Airport:       "+flight.getSourceAirport()+"\n";
+        reducerOutput += "Destination Airport:  "+flight.getDestinationAirport()+"\n";
+        reducerOutput += "Passengers:           "+"\n";
+        for(int x=0;x<values.size();x++){
+            PassengerFlight passenger = (PassengerFlight) values.get(x);
+            reducerOutput += "                    "+passenger.getPassengerId()+"\n";
+        }
+        return reducerOutput;
 
     }
+
+    static String reducer3(String key, ArrayList<Object> values){
+        PassengerFlight flight = (PassengerFlight) values.get(0);
+        String reducerOutput = "";
+        reducerOutput += "Flight ID:            "+key+"\n";
+        reducerOutput += "Passengers on Flight: "+values.size();
+        return reducerOutput;
+
+    }
+
+
 
 }
