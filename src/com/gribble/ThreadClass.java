@@ -134,12 +134,19 @@ public class ThreadClass {
     }
 
     static ReducerOuput reducer1(String key, ArrayList<Object> values){
+        ArrayList<String> flights = new ArrayList<String>();
+        for(int x=0;x<values.size();x++){
+            String flightID = String.valueOf(values.get(x));
+            if(!flights.contains(flightID)){
+                flights.add(flightID);
+            }
+        }
         String airportName = ThreadClass.airportHashMap.get(key).getAirportName();
 
         String reducerString = "Airport:              "+airportName+"\n";
         reducerString += "Airport Code:         "+ key+"\n";
-        reducerString += "Flights From Airport: "+ values.size()+"\n";
-        String[] options = {airportName,key,String.valueOf(values.size())};
+        reducerString += "Flights From Airport: "+ flights.size()+"\n";
+        String[] options = {airportName,key,String.valueOf(flights.size())};
         String rCSV = makeCSVRow(options);
         return new ReducerOuput(reducerString,rCSV);
     }

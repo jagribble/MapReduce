@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f71ef3c-c7b1-48f5-8d6a-402e95d53ab9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/gribble/ReducerOuput.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/Main.class" afterPath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/ThreadClass.class" afterPath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/ThreadClass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objective1.csv" afterPath="$PROJECT_DIR$/Objective1.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/gribble/Main.java" afterPath="$PROJECT_DIR$/src/com/gribble/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/gribble/ThreadClass.java" afterPath="$PROJECT_DIR$/src/com/gribble/ThreadClass.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -19,10 +16,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/gribble/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
+            <state relative-caret-position="194">
               <caret line="79" column="29" lean-forward="false" selection-start-line="79" selection-start-column="29" selection-end-line="79" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -37,17 +34,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ThreadClass.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ThreadClass.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/gribble/ThreadClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="177" column="26" lean-forward="true" selection-start-line="177" selection-start-column="26" selection-end-line="177" selection-end-column="46" />
+            <state relative-caret-position="351">
+              <caret line="148" column="66" lean-forward="false" selection-start-line="148" selection-start-column="66" selection-end-line="148" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1559#1573#0" expanded="true" />
                 <element signature="e#3144#3158#0" expanded="true" />
                 <element signature="e#4630#4644#0" expanded="true" />
                 <element signature="e#5317#5325#0" expanded="true" />
+                <element signature="e#5599#5607#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -135,8 +133,8 @@
         <option value="$PROJECT_DIR$/src/com/gribble/MapperOutput.java" />
         <option value="$PROJECT_DIR$/src/com/gribble/PassengerFlight.java" />
         <option value="$PROJECT_DIR$/src/com/gribble/ReducerOuput.java" />
-        <option value="$PROJECT_DIR$/src/com/gribble/ThreadClass.java" />
         <option value="$PROJECT_DIR$/src/com/gribble/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/gribble/ThreadClass.java" />
       </list>
     </option>
   </component>
@@ -268,12 +266,12 @@
       <workItem from="1516798049134" duration="6517000" />
       <workItem from="1517412676537" duration="5037000" />
       <workItem from="1517509948470" duration="663000" />
-      <workItem from="1519080564293" duration="11446000" />
+      <workItem from="1519080564293" duration="12048000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29957000" />
+    <option name="totallyTimeSpent" value="30559000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -287,7 +285,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -383,6 +381,7 @@
             <element signature="e#3144#3158#0" expanded="true" />
             <element signature="e#4630#4644#0" expanded="true" />
             <element signature="e#5317#5325#0" expanded="true" />
+            <element signature="e#5599#5607#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -449,6 +448,7 @@
             <element signature="e#3144#3158#0" expanded="true" />
             <element signature="e#4630#4644#0" expanded="true" />
             <element signature="e#5317#5325#0" expanded="true" />
+            <element signature="e#5599#5607#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -515,6 +515,7 @@
             <element signature="e#3144#3158#0" expanded="true" />
             <element signature="e#4630#4644#0" expanded="true" />
             <element signature="e#5317#5325#0" expanded="true" />
+            <element signature="e#5599#5607#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -609,23 +610,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gribble/ThreadClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="177" column="26" lean-forward="true" selection-start-line="177" selection-start-column="26" selection-end-line="177" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1559#1573#0" expanded="true" />
-            <element signature="e#3144#3158#0" expanded="true" />
-            <element signature="e#4630#4644#0" expanded="true" />
-            <element signature="e#5317#5325#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/gribble/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
+        <state relative-caret-position="194">
           <caret line="79" column="29" lean-forward="false" selection-start-line="79" selection-start-column="29" selection-end-line="79" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -635,6 +622,21 @@
             <element signature="e#3001#3015#0" expanded="true" />
             <element signature="e#4196#4204#0" expanded="true" />
             <element signature="e#4293#4307#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gribble/ThreadClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="148" column="66" lean-forward="false" selection-start-line="148" selection-start-column="66" selection-end-line="148" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1559#1573#0" expanded="true" />
+            <element signature="e#3144#3158#0" expanded="true" />
+            <element signature="e#4630#4644#0" expanded="true" />
+            <element signature="e#5317#5325#0" expanded="true" />
+            <element signature="e#5599#5607#0" expanded="true" />
           </folding>
         </state>
       </provider>
