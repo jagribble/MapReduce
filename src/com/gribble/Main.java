@@ -53,8 +53,12 @@ public class Main {
             System.out.println("-----------------------------------");
             reducer1Output.add(output);
         }
+
+        ReducerOuput missingAirports = ThreadClass.missingAirports();
+        System.out.println(missingAirports.reducerString);
         String[] headings = {"Airport","Airport Code","Flights From Airport"};
-        createCSV("Objective1.csv",headings,reducer1Output);
+        String[] additionalHeadings = {"Airport Code", "Airport Name"};
+        createCSV("Objective1.csv",headings,reducer1Output,additionalHeadings,missingAirports.reducerCSV);
 
 
     }
@@ -109,6 +113,38 @@ public class Main {
             for (int x=0;x<reducerOuputs.size();x++){
                 fileWriter.append(reducerOuputs.get(x).reducerCSV);
             }
+            System.out.println("CSV file was created successfully !!!");
+
+        } catch (Exception e) {
+            System.out.println("Error in CsvFileWriter !!!");
+            e.printStackTrace();
+        } finally {
+
+            try {
+                fileWriter.flush();
+                fileWriter.close();
+            } catch (IOException e) {
+                System.out.println("Error while flushing/closing fileWriter !!!");
+                e.printStackTrace();
+            }
+
+        }
+    }
+
+    static void createCSV(String name,String[] headings, ArrayList<ReducerOuput> reducerOuputs,String[] additionalHeadings, String additionalData){
+        FileWriter fileWriter = null;
+        try {
+            fileWriter = new FileWriter(name);
+
+            fileWriter.append(ThreadClass.makeCSVRow(headings));
+            for (int x=0;x<reducerOuputs.size();x++){
+                fileWriter.append(reducerOuputs.get(x).reducerCSV);
+            }
+            fileWriter.append("\n\n");
+            fileWriter.append(ThreadClass.makeCSVRow(additionalHeadings));
+
+            fileWriter.append(additionalData);
+
             System.out.println("CSV file was created successfully !!!");
 
         } catch (Exception e) {

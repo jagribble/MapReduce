@@ -9,7 +9,12 @@ import java.util.HashMap;
 
 public class ThreadClass {
 
+    static int CAPATIAL_CASE = 0;
+    static int LOWER_CASE = 1;
+    static int NUMBER = 3;
+    static int WHITESPACE = 4;
     static HashMap<String,Airport> airportHashMap = new HashMap<String, Airport>();
+    static ArrayList<String> objective1Airports = new ArrayList<String>();
 
     static String makeCSVRow(String[] values){
         String csvString = "";
@@ -133,6 +138,22 @@ public class ThreadClass {
         return hashMap;
     }
 
+    static ReducerOuput missingAirports(){
+        ArrayList<String> allAirports = new ArrayList<String>(ThreadClass.airportHashMap.keySet());
+        for (int x=0;x<ThreadClass.objective1Airports.size();x++){
+            allAirports.remove(ThreadClass.objective1Airports.get(x));
+        }
+        String reducerString = "Missing Airports:";
+        String reducerCSV = "";
+        for(int x=0;x<allAirports.size();x++){
+            reducerString += "          "+allAirports.get(x)+","+
+                    ThreadClass.airportHashMap.get(allAirports.get(x))+"\n";
+            reducerCSV += allAirports.get(x) +","+ThreadClass.airportHashMap.get((allAirports.get(x))).getAirportName()+"\n";
+        }
+        ReducerOuput reducerOuput = new ReducerOuput(reducerString,reducerCSV);
+        return reducerOuput;
+    }
+
     static ReducerOuput reducer1(String key, ArrayList<Object> values){
         ArrayList<String> flights = new ArrayList<String>();
         for(int x=0;x<values.size();x++){
@@ -142,7 +163,7 @@ public class ThreadClass {
             }
         }
         String airportName = ThreadClass.airportHashMap.get(key).getAirportName();
-
+        ThreadClass.objective1Airports.add(key);
         String reducerString = "Airport:              "+airportName+"\n";
         reducerString += "Airport Code:         "+ key+"\n";
         reducerString += "Flights From Airport: "+ flights.size()+"\n";

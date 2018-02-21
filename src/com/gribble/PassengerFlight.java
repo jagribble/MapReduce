@@ -2,15 +2,17 @@ package com.gribble;
 
 import java.util.Date;
 
+
+
 public class PassengerFlight {
 
     /**
-     * Passenger id: Format: 𝑋𝑋𝑋𝑛𝑛𝑛𝑛𝑋𝑋n
-     * Flight id: Format: 𝑋𝑋𝑋𝑛𝑛𝑛𝑛X
-     * From airport IATA/FAA code: Format: XXX
-     * Destination airport IATA/FAA code: Format: XXX
-     * Departure time (GMT):  Format: 𝑛 [10] (This is in Unix ‘epoch’ time)
-     * Total flight time (mins): Format: 𝑛 [1. .4]
+     * Passenger id:                           Format: 𝑋𝑋𝑋𝑛𝑛𝑛𝑛𝑋𝑋𝑛
+     * Flight id:                              Format: 𝑋𝑋𝑋𝑛𝑛𝑛𝑛𝑋
+     * From airport IATA/FAA code:             Format: 𝑋𝑋𝑋
+     * Destination airport IATA/FAA code:      Format: 𝑋𝑋𝑋
+     * Departure time (GMT):                   Format: 𝑛[10] (This is in Unix ‘epoch’ time)
+     * Total flight time (mins):               Format: 𝑛[1. .4]
      **/
 
     private String passengerId;
@@ -19,6 +21,8 @@ public class PassengerFlight {
     private String destinationAirport;
     private Date depatureTime;
     private int flightTime;
+    protected Boolean error;
+    protected String errorMessage;
 
     public PassengerFlight(String pId, String sAirport, String dAirport, Date dTime, int fTime){
         this.passengerId = pId;
@@ -26,6 +30,21 @@ public class PassengerFlight {
         this.destinationAirport = dAirport;
         this.depatureTime = dTime;
         this. flightTime = fTime;
+    }
+
+    private void checkValidation(){
+        char[] pId = this.passengerId.toCharArray();
+        char[] fId = this.flightId.toCharArray();
+        char[] sAirport = this.sourceAirport.toCharArray();
+        char[] dAirport = this.destinationAirport.toCharArray();
+
+    }
+
+    Boolean checkValid(int[] accepted ,char[] values){
+        for(int x=0;x<values.length;x++){
+
+        }
+        return true;
     }
 
     public String getPassengerId() {
