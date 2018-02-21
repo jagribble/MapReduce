@@ -13,22 +13,31 @@ public class PassengerFlight {
      * Departure time (GMT):                   Format: 𝑛[10] (This is in Unix ‘epoch’ time)
      * Total flight time (mins):               Format: 𝑛[1. .4]
      **/
-
+    private Syntax[] passengerSyntax = {Syntax.CAPATIAL_CASE,Syntax.CAPATIAL_CASE,Syntax.CAPATIAL_CASE,Syntax.NUMBER,
+                            Syntax.NUMBER,Syntax.NUMBER,Syntax.NUMBER,Syntax.CAPATIAL_CASE,Syntax.CAPATIAL_CASE,Syntax.NUMBER};
+    private Syntax[] flightSyntax = {Syntax.CAPATIAL_CASE,Syntax.CAPATIAL_CASE,Syntax.CAPATIAL_CASE,Syntax.NUMBER,
+            Syntax.NUMBER,Syntax.NUMBER,Syntax.NUMBER,Syntax.CAPATIAL_CASE};
+    private Syntax[] sourceAirportSyntax = {Syntax.CAPATIAL_CASE,Syntax.CAPATIAL_CASE,Syntax.CAPATIAL_CASE};
+    private Syntax[] destinationAirportSyntax = {Syntax.CAPATIAL_CASE,Syntax.CAPATIAL_CASE,Syntax.CAPATIAL_CASE};
+    private Syntax[] departureTime = {Syntax.NUMBER,Syntax.NUMBER,Syntax.NUMBER,Syntax.NUMBER,Syntax.NUMBER,
+            Syntax.NUMBER,Syntax.NUMBER,Syntax.NUMBER,Syntax.NUMBER,Syntax.NUMBER};
     private String passengerId;
     private String flightId;
     private String sourceAirport;
     private String destinationAirport;
     private Date depatureTime;
     private int flightTime;
-    protected Boolean error;
+    protected Boolean error = false;
     protected String errorMessage;
 
-    public PassengerFlight(String pId, String sAirport, String dAirport, Date dTime, int fTime){
+    public PassengerFlight(String pId,String fId, String sAirport, String dAirport, Date dTime, int fTime){
         this.passengerId = pId;
+        this.flightId = fId;
         this.sourceAirport = sAirport;
         this.destinationAirport = dAirport;
         this.depatureTime = dTime;
         this. flightTime = fTime;
+        checkValidation();
     }
 
     private void checkValidation(){
@@ -36,6 +45,18 @@ public class PassengerFlight {
         char[] fId = this.flightId.toCharArray();
         char[] sAirport = this.sourceAirport.toCharArray();
         char[] dAirport = this.destinationAirport.toCharArray();
+        String errorString = "";
+        // check validty of each varible according to their syntax.
+        // If true then invalid
+        Boolean passenger = checkValid(passengerSyntax,pId);
+        Boolean flight = checkValid(flightSyntax,fId);
+        Boolean source = checkValid(sourceAirportSyntax,sAirport);
+        Boolean destination = checkValid(destinationAirportSyntax,dAirport);
+        if(passenger || flight || source || destination){
+            System.err.println("Error: Syntax Error with Passenger Flight");
+            this.error = true;
+            this.errorMessage = "Error: Syntax Error with Passenger Flight";
+        }
 
     }
 
@@ -44,28 +65,28 @@ public class PassengerFlight {
             switch (accepted[x]){
                 case CAPATIAL_CASE:
                     if(!Character.isUpperCase(values[x])){
-                        return false;
+                        return true;
                     }
                     break;
                 case LOWER_CASE:
                     if(!Character.isLowerCase(values[x])){
-                        return false;
+                        return true;
                     }
                     break;
                 case NUMBER:
                     if(!Character.isDigit(values[x])){
-                        return false;
+                        return true;
                     }
                     break;
                 case WHITESPACE:
                     if(!Character.isWhitespace(values[x])){
-                        return false;
+                        return true;
                     }
                     break;
 
             }
         }
-        return true;
+        return false;
     }
 
     public String getPassengerId() {

@@ -95,10 +95,13 @@ public class ThreadClass {
             } else if(!airportHashMap.containsKey(startingAirpot)){
                 System.err.println("Error at "+(x+1)+": Starting airport does not exist in airport list ("+startingAirpot+")");
             } else{
-                PassengerFlight passengerFlight = new PassengerFlight(passengerId,startingAirpot,destinationAirport,depatureTime,flightTime);
-                MapperOutput keyValue = new MapperOutput(flightId,passengerFlight);
-                //System.out.println("Key: "+keyValue.getKey()+"   ®Value: "+keyValue.getValue());
-                mapValue.add(keyValue);
+                PassengerFlight passengerFlight = new PassengerFlight(passengerId,flightId,startingAirpot,destinationAirport,depatureTime,flightTime);
+                if (!passengerFlight.error){
+                    MapperOutput keyValue = new MapperOutput(flightId,passengerFlight);
+                    //System.out.println("Key: "+keyValue.getKey()+"   ®Value: "+keyValue.getValue());
+                    mapValue.add(keyValue);
+                }
+
             }
 
         }
