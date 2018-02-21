@@ -85,13 +85,13 @@ public class Main {
     }
 
     static void runObjective3() throws ParseException {
-        System.out.println("-------RUNNING MAPPER 1----");
+        System.out.println("-------RUNNING MAPPER 3----");
         ArrayList<MapperOutput> mapperOutput = ThreadClass.mapper2(lines);
-        System.out.println("--------END OF MAPPER 2----------");
-        System.out.println("--------SHUFFLER 2----------");
+        System.out.println("--------END OF MAPPER 3----------");
+        System.out.println("--------SHUFFLER 3----------");
         HashMap<String, ArrayList<Object>> shuffledOutput = ThreadClass.shuffler(mapperOutput);
         System.out.println(shuffledOutput);
-        System.out.println("--------END OF SHUFFLER 1----------");
+        System.out.println("--------END OF SHUFFLER 3----------");
         ArrayList<String> listofKeys = new ArrayList<String>(shuffledOutput.keySet());
         ArrayList<ReducerOuput> reducer3Output = new ArrayList<ReducerOuput>();
         for(int x=0;x<listofKeys.size();x++){

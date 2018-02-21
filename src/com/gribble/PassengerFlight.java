@@ -3,7 +3,6 @@ package com.gribble;
 import java.util.Date;
 
 
-
 public class PassengerFlight {
 
     /**
@@ -40,9 +39,31 @@ public class PassengerFlight {
 
     }
 
-    Boolean checkValid(int[] accepted ,char[] values){
+    Boolean checkValid(Syntax[] accepted ,char[] values){
         for(int x=0;x<values.length;x++){
+            switch (accepted[x]){
+                case CAPATIAL_CASE:
+                    if(!Character.isUpperCase(values[x])){
+                        return false;
+                    }
+                    break;
+                case LOWER_CASE:
+                    if(!Character.isLowerCase(values[x])){
+                        return false;
+                    }
+                    break;
+                case NUMBER:
+                    if(!Character.isDigit(values[x])){
+                        return false;
+                    }
+                    break;
+                case WHITESPACE:
+                    if(!Character.isWhitespace(values[x])){
+                        return false;
+                    }
+                    break;
 
+            }
         }
         return true;
     }

@@ -9,12 +9,9 @@ import java.util.HashMap;
 
 public class ThreadClass {
 
-    static int CAPATIAL_CASE = 0;
-    static int LOWER_CASE = 1;
-    static int NUMBER = 3;
-    static int WHITESPACE = 4;
-    static HashMap<String,Airport> airportHashMap = new HashMap<String, Airport>();
-    static ArrayList<String> objective1Airports = new ArrayList<String>();
+
+    public static HashMap<String,Airport> airportHashMap = new HashMap<String, Airport>();
+    public static ArrayList<String> objective1Airports = new ArrayList<String>();
 
     static String makeCSVRow(String[] values){
         String csvString = "";
@@ -61,7 +58,7 @@ public class ThreadClass {
             } else if(flightId.isEmpty()){
                 System.err.println("Error at "+(x+1)+": Flight ID missing");
             }else if(!airportHashMap.containsKey(startingAirpot)){
-                System.out.println("Error at "+(x+1)+": Starting airport does not exist in airport list ("+startingAirpot+")");
+                System.err.println("Error at "+(x+1)+": Starting airport does not exist in airport list ("+startingAirpot+")");
             } else{
                 MapperOutput keyValue = new MapperOutput(startingAirpot,flightId);
                 mapValue.add(keyValue);
@@ -100,7 +97,7 @@ public class ThreadClass {
             } else{
                 PassengerFlight passengerFlight = new PassengerFlight(passengerId,startingAirpot,destinationAirport,depatureTime,flightTime);
                 MapperOutput keyValue = new MapperOutput(flightId,passengerFlight);
-                System.out.println("Key: "+keyValue.getKey()+"   ®Value: "+keyValue.getValue());
+                //System.out.println("Key: "+keyValue.getKey()+"   ®Value: "+keyValue.getValue());
                 mapValue.add(keyValue);
             }
 
@@ -143,11 +140,11 @@ public class ThreadClass {
         for (int x=0;x<ThreadClass.objective1Airports.size();x++){
             allAirports.remove(ThreadClass.objective1Airports.get(x));
         }
-        String reducerString = "Missing Airports:";
+        String reducerString = "Missing Airports:\n";
         String reducerCSV = "";
         for(int x=0;x<allAirports.size();x++){
             reducerString += "          "+allAirports.get(x)+","+
-                    ThreadClass.airportHashMap.get(allAirports.get(x))+"\n";
+                    ThreadClass.airportHashMap.get(allAirports.get(x)).getAirportName()+"\n";
             reducerCSV += allAirports.get(x) +","+ThreadClass.airportHashMap.get((allAirports.get(x))).getAirportName()+"\n";
         }
         ReducerOuput reducerOuput = new ReducerOuput(reducerString,reducerCSV);
