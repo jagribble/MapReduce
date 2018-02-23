@@ -32,12 +32,23 @@ public class Main {
         airportLines = getLines("./src/Top30_airports_LatLong.csv");
     }
 
+    public static void getAirportData(String dirName){
+        airportLines = getLines(dirName+"/Top30_airports_LatLong.csv");
+        System.out.println(airportLines);
+    }
+
     public static void getPassangerData(){
         // read in file
         lines = getLines("./src/AComp_Passenger_data.csv");
     }
 
-    static void runObjective1(){
+    public static void getPassangerData(String dirName){
+        // read in file
+        lines = getLines(dirName+"/AComp_Passenger_data.csv");
+        System.out.println(lines);
+    }
+
+    static String runObjective1(){
         System.out.println("-------RUNNING MAPPER 1----");
         // Split the lines in to equal chunks
         ArrayList<ArrayList<String>> lineChunks = StaticClass.getChuncks(lines,10);
@@ -85,10 +96,13 @@ public class Main {
             }
 
         }
+        String reducedOutput = "";
         // get the output from each reducer thread and add it to the ouput list
         for(int x=0;x<threads.size();x++){
             ReducerOuput output = threads.get(x).reducerOuput;
+            reducedOutput+= output.reducerString;
             System.out.println(output.reducerString);
+            reducedOutput += "\n-----------------------------------\n";
             System.out.println("-----------------------------------");
             reducer1Output.add(output);
         }
@@ -98,11 +112,11 @@ public class Main {
         String[] headings = {"Airport","Airport Code","Flights From Airport"};
         String[] additionalHeadings = {"Airport Code", "Airport Name"};
         createCSV("Objective1.csv",headings,reducer1Output,additionalHeadings,missingAirports.reducerCSV);
-
+        return reducedOutput;
 
     }
 
-    static void runObjective2() throws ParseException {
+    static String runObjective2() throws ParseException {
         System.out.println("-------RUNNING MAPPER 2----");
         // Split the lines in to equal chunks
         ArrayList<ArrayList<String>> lineChunks = StaticClass.getChuncks(lines,10);
@@ -152,17 +166,21 @@ public class Main {
             }
 
         }
+        String reducedOutput = "";
         for(int x=0;x<threads.size();x++){
             ReducerOuput output = threads.get(x).reducerOuput;
+            reducedOutput += output.reducerString;
             System.out.println(output.reducerString);
+            reducedOutput += "\n-----------------------------------\n";
             System.out.println("-----------------------------------");
             reducer2Output.add(output);
         }
         String[] headings = {"Flight ID","Flight Depature Time","Flight time","Source Airport","Destination Airport","Passengers"};
         createCSV("Objective2.csv",headings,reducer2Output);
+        return reducedOutput;
     }
 
-    static void runObjective3() throws ParseException {
+    static String runObjective3() throws ParseException {
         System.out.println("-------RUNNING MAPPER 3----");
         // Split the lines in to equal chunks
         ArrayList<ArrayList<String>> lineChunks = StaticClass.getChuncks(lines,10);
@@ -210,14 +228,19 @@ public class Main {
             }
 
         }
+
+        String reducedOutput = "";
         for(int x=0;x<threads.size();x++){
             ReducerOuput output = threads.get(x).reducerOuput;
             System.out.println(output.reducerString);
+            reducedOutput+=output.reducerString;
+            reducedOutput += "\n-----------------------------------\n";
             System.out.println("-----------------------------------");
             reducer3Output.add(output);
         }
         String[] headings = {"Flight ID","Passengers on Flight"};
         createCSV("Objective3.csv",headings,reducer3Output);
+        return reducedOutput;
     }
 
     static void createCSV(String name,String[] headings, ArrayList<ReducerOuput> reducerOuputs){
