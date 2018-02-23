@@ -5,49 +5,84 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 
-public class ThreadClass {
+public class ThreadClass implements Runnable {
 
+    public Thread thread;
+    private String threadName;
+    private ArrayList<String> mapperLines;
+    private int mode;
+    private boolean mapper;
+    private ArrayList<Object> reducerValues;
+    private String reducerKey;
+    public ArrayList<MapperOutput> mapperOutput;
+    public ReducerOuput reducerOuput;
 
-    public static HashMap<String,Airport> airportHashMap = new HashMap<String, Airport>();
-    public static ArrayList<String> objective1Airports = new ArrayList<String>();
-
-    static String makeCSVRow(String[] values){
-        String csvString = "";
-        for(int x=0;x<values.length;x++){
-            csvString += values[x] +",";
-        }
-        csvString += "\n";
-        return csvString;
+    public ThreadClass(String tName,ArrayList<String> mLines,int m){
+        this.threadName = tName;
+        this.mapperLines = mLines;
+        this.mode = m;
+        this.mapper = true;
     }
 
-    /**
-     * Maps the airports in a hash map to enable them to be esaily looked up
-     *
-     * @param airportArrayLines lines of input csv
-     * **/
-    static void getAirportHashMap(ArrayList<String> airportArrayLines){
-        for(int x=0;x<airportArrayLines.size();x++){
-            String[] row = airportArrayLines.get(x).split(",");
-            if(row.length-1>2){
-                String airportName = row[0];
-                String airportCode = row[1];
-                Float lat = Float.valueOf(row[2]);
-                Float lng = Float.valueOf(row[3]);
-                Airport airport = new Airport(airportName,airportCode,lat,lng);
-                airportHashMap.put(airportCode,airport);
+    public ThreadClass(String tName,ArrayList<Object> rValues,String rKey,int m){
+        this.threadName = tName;
+        this.reducerValues = rValues;
+        this.reducerKey = rKey;
+        this.mode = m;
+    }
+
+
+    public void run(){
+        if(this.mapper){
+            try {
+                switch (this.mode) {
+                    case 1:
+                        this.mapperOutput = this.mapper1(this.mapperLines);
+                        break;
+                    case 2:
+                        this.mapperOutput = this.mapper2(this.mapperLines);
+                        break;
+                    case 3:
+                        this.mapperOutput = this.mapper2(this.mapperLines);
+                        break;
+                }
+            } catch (ParseException e) {
+                e.printStackTrace();
             }
 
+        } else{
+            switch (this.mode) {
+                case 1:
+                    this.reducerOuput = this.reducer1(this.reducerKey,this.reducerValues);
+                    break;
+                case 2:
+                    this.reducerOuput = this.reducer2(this.reducerKey,this.reducerValues);
+                    break;
+                case 3:
+                    this.reducerOuput = this.reducer3(this.reducerKey,this.reducerValues);
+                    break;
+            }
         }
     }
+
+    public void start () {
+        if (thread == null) {
+            thread = new Thread (this, threadName);
+            thread.start ();
+        }
+    }
+
+
+
+
 
     /** Objective 1
      *
      * Determine the number of flights from each airport; include a list of any airports not used.
      *
      * **/
-    public static ArrayList<MapperOutput> mapper1(ArrayList<String> mapperLines){
+    public ArrayList<MapperOutput> mapper1(ArrayList<String> mapperLines){
         ArrayList<MapperOutput> mapValue = new ArrayList<MapperOutput>();
         for(int x=0;x<mapperLines.size();x++){
             String[] row = mapperLines.get(x).split(",");
@@ -57,7 +92,7 @@ public class ThreadClass {
                 System.err.println("Error at "+(x+1)+": starting airpot missing");
             } else if(flightId.isEmpty()){
                 System.err.println("Error at "+(x+1)+": Flight ID missing");
-            }else if(!airportHashMap.containsKey(startingAirpot)){
+            }else if(!StaticClass.airportHashMap.containsKey(startingAirpot)){
                 System.err.println("Error at "+(x+1)+": Starting airport does not exist in airport list ("+startingAirpot+")");
             } else{
                 MapperOutput keyValue = new MapperOutput(startingAirpot,flightId);
@@ -78,7 +113,7 @@ public class ThreadClass {
      * @param mapperLines lines from the list for the single mapper to map.
      * @return array of (key,value) pairs
      */
-    public static ArrayList<MapperOutput> mapper2(ArrayList<String> mapperLines) throws ParseException {
+    public ArrayList<MapperOutput> mapper2(ArrayList<String> mapperLines) throws ParseException {
         //this.getAirportHashMap();
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:MM:SS");
         ArrayList<MapperOutput> mapValue = new ArrayList<MapperOutput>();
@@ -92,7 +127,7 @@ public class ThreadClass {
             int flightTime = Integer.valueOf(row[5]);
             if(passengerId.isEmpty() || startingAirpot.isEmpty() || destinationAirport.isEmpty() || flightTime == 0 ){
                 System.err.println("Error at "+(x+1)+": Values missing");
-            } else if(!airportHashMap.containsKey(startingAirpot)){
+            } else if(!StaticClass.airportHashMap.containsKey(startingAirpot)){
                 System.err.println("Error at "+(x+1)+": Starting airport does not exist in airport list ("+startingAirpot+")");
             } else{
                 PassengerFlight passengerFlight = new PassengerFlight(passengerId,flightId,startingAirpot,destinationAirport,depatureTime,flightTime);
@@ -122,39 +157,8 @@ public class ThreadClass {
         return mapValue;
     }
 
-    static HashMap<String,ArrayList<Object>> shuffler(ArrayList<MapperOutput> mapperOutput){
-        HashMap<String,ArrayList<Object>> hashMap = new HashMap<String, ArrayList<Object>>();
-        for(int x=0;x<mapperOutput.size();x++){
-            String key = mapperOutput.get(x).getKey();
-            Object value = mapperOutput.get(x).getValue();
-            if(hashMap.containsKey(key)){
-                hashMap.get(key).add(value);
-            } else{
-                ArrayList<Object> objectArrayList = new ArrayList<Object>();
-                objectArrayList.add(value);
-                hashMap.put(key,objectArrayList);
-            }
-        }
-        return hashMap;
-    }
 
-    static ReducerOuput missingAirports(){
-        ArrayList<String> allAirports = new ArrayList<String>(ThreadClass.airportHashMap.keySet());
-        for (int x=0;x<ThreadClass.objective1Airports.size();x++){
-            allAirports.remove(ThreadClass.objective1Airports.get(x));
-        }
-        String reducerString = "Missing Airports:\n";
-        String reducerCSV = "";
-        for(int x=0;x<allAirports.size();x++){
-            reducerString += "          "+allAirports.get(x)+","+
-                    ThreadClass.airportHashMap.get(allAirports.get(x)).getAirportName()+"\n";
-            reducerCSV += allAirports.get(x) +","+ThreadClass.airportHashMap.get((allAirports.get(x))).getAirportName()+"\n";
-        }
-        ReducerOuput reducerOuput = new ReducerOuput(reducerString,reducerCSV);
-        return reducerOuput;
-    }
-
-    static ReducerOuput reducer1(String key, ArrayList<Object> values){
+     public ReducerOuput reducer1(String key, ArrayList<Object> values){
         ArrayList<String> flights = new ArrayList<String>();
         for(int x=0;x<values.size();x++){
             String flightID = String.valueOf(values.get(x));
@@ -162,13 +166,13 @@ public class ThreadClass {
                 flights.add(flightID);
             }
         }
-        String airportName = ThreadClass.airportHashMap.get(key).getAirportName();
-        ThreadClass.objective1Airports.add(key);
+        String airportName = StaticClass.airportHashMap.get(key).getAirportName();
+        StaticClass.objective1Airports.add(key);
         String reducerString = "Airport:              "+airportName+"\n";
         reducerString += "Airport Code:         "+ key+"\n";
         reducerString += "Flights From Airport: "+ flights.size()+"\n";
         String[] options = {airportName,key,String.valueOf(flights.size())};
-        String rCSV = makeCSVRow(options);
+        String rCSV = StaticClass.makeCSVRow(options);
         return new ReducerOuput(reducerString,rCSV);
     }
 
@@ -176,7 +180,7 @@ public class ThreadClass {
      *
      * Set up output for each key
      * **/
-    static ReducerOuput reducer2(String key, ArrayList<Object> values){
+    public ReducerOuput reducer2(String key, ArrayList<Object> values){
         PassengerFlight flight = (PassengerFlight) values.get(0);
         String reducerString = "";
         reducerString += "Flight ID:            "+key+"\n";
@@ -193,19 +197,19 @@ public class ThreadClass {
         }
         String[] options = {key,String.valueOf(flight.getDepatureTime()),String.valueOf(flight.getFlightTime()),
                 flight.getSourceAirport(),flight.getDestinationAirport(),passengerString};
-        String rCSV = makeCSVRow(options);
+        String rCSV = StaticClass.makeCSVRow(options);
         return new ReducerOuput(reducerString,rCSV);
 
 
     }
 
-    static ReducerOuput reducer3(String key, ArrayList<Object> values){
+    public ReducerOuput reducer3(String key, ArrayList<Object> values){
         PassengerFlight flight = (PassengerFlight) values.get(0);
         String reducerString = "";
         reducerString += "Flight ID:            "+key+"\n";
         reducerString += "Passengers on Flight: "+values.size();
         String[] options = {key,String.valueOf(values.size())};
-        String rCSV = makeCSVRow(options);
+        String rCSV = StaticClass.makeCSVRow(options);
         return new ReducerOuput(reducerString,rCSV);
 
     }
