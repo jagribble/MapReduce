@@ -39,25 +39,43 @@ public class Main {
 
     static void runObjective1(){
         System.out.println("-------RUNNING MAPPER 1----");
-        ThreadClass mapperThread = new ThreadClass("mapper1",lines,1);
-        mapperThread.start();
-        try {
-            mapperThread.thread.join();
-        } catch (InterruptedException e) {
-            System.out.println("Main Thread interuppted");
-            e.printStackTrace();
+        // Split the lines in to equal chunks
+        ArrayList<ArrayList<String>> lineChunks = StaticClass.getChuncks(lines,10);
+        ArrayList<ThreadClass> mapperThreads = new ArrayList<ThreadClass>();
+        // for each chunk make a new thread to run mapper 1
+        for (int x=0;x<lineChunks.size();x++){
+            ThreadClass mapperThread = new ThreadClass("mapper1"+x,lineChunks.get(x),1);
+            // add the mapper to the thread list
+            mapperThreads.add(mapperThread);
+            // start the thread
+            mapperThread.start();
+            try {
+                // wait for all threads to finish by joining them
+                mapperThread.thread.join();
+            } catch (InterruptedException e) {
+                System.out.println("Main Thread interuppted");
+                e.printStackTrace();
+            }
         }
-        ArrayList<MapperOutput> mapperOutput = mapperThread.mapperOutput;
+        // shuffled output as hashmap
+        HashMap<String, ArrayList<Object>> shuffledOutput = new HashMap<String, ArrayList<Object>>();
+        for (int x=0;x<mapperThreads.size();x++){
+            // get the mapper output from each thread and add it to the shuffled output
+            ArrayList<MapperOutput> mapperOutput = mapperThreads.get(x).mapperOutput;
+            shuffledOutput = StaticClass.shuffler(mapperOutput,shuffledOutput);
+        }
+
         System.out.println("--------END OF MAPPER 1----------");
         System.out.println("--------SHUFFLER 1----------");
-        HashMap<String, ArrayList<Object>> shuffledOutput = StaticClass.shuffler(mapperOutput);
+
         System.out.println(shuffledOutput);
         System.out.println("--------END OF SHUFFLER 1----------");
         ArrayList<String> listofKeys = new ArrayList<String>(shuffledOutput.keySet());
         ArrayList<ThreadClass> threads = new ArrayList<ThreadClass>();
         ArrayList<ReducerOuput> reducer1Output = new ArrayList<ReducerOuput>();
+        // For each key in the shuffled mapper output make a reducer thread and add it to the reducer thread array
         for(int x=0;x<listofKeys.size();x++){
-            ThreadClass threadReducer = new ThreadClass("reducer"+1,shuffledOutput.get(listofKeys.get(x)),listofKeys.get(x),1);
+            ThreadClass threadReducer = new ThreadClass("reducer-2"+x,shuffledOutput.get(listofKeys.get(x)),listofKeys.get(x),1);
             threads.add(threadReducer);
             threadReducer.start();
             try {
@@ -67,6 +85,7 @@ public class Main {
             }
 
         }
+        // get the output from each reducer thread and add it to the ouput list
         for(int x=0;x<threads.size();x++){
             ReducerOuput output = threads.get(x).reducerOuput;
             System.out.println(output.reducerString);
@@ -85,26 +104,45 @@ public class Main {
 
     static void runObjective2() throws ParseException {
         System.out.println("-------RUNNING MAPPER 2----");
-        ThreadClass mapperThread = new ThreadClass("mapper1",lines,2);
-        mapperThread.start();
-        try {
-            mapperThread.thread.join();
-        } catch (InterruptedException e) {
-            System.out.println("Main Thread interuppted");
-            e.printStackTrace();
+        // Split the lines in to equal chunks
+        ArrayList<ArrayList<String>> lineChunks = StaticClass.getChuncks(lines,10);
+        ArrayList<ThreadClass> mapperThreads = new ArrayList<ThreadClass>();
+        // for each chunk make a new thread to run mapper 1
+        for (int x=0;x<lineChunks.size();x++){
+            ThreadClass mapperThread = new ThreadClass("mapper2"+x,lineChunks.get(x),2);
+            // add the mapper to the thread list
+            mapperThreads.add(mapperThread);
+            // start the thread
+            mapperThread.start();
+            try {
+                // wait for all threads to finish by joining them
+                mapperThread.thread.join();
+            } catch (InterruptedException e) {
+                System.out.println("Main Thread interuppted");
+                e.printStackTrace();
+            }
         }
-        ArrayList<MapperOutput> mapperOutput = mapperThread.mapperOutput;
+
+        // shuffled output as hashmap
+        HashMap<String, ArrayList<Object>> shuffledOutput = new HashMap<String, ArrayList<Object>>();
+        for (int x=0;x<mapperThreads.size();x++){
+            // get the mapper output from each thread and add it to the shuffled output
+            ArrayList<MapperOutput> mapperOutput = mapperThreads.get(x).mapperOutput;
+            shuffledOutput = StaticClass.shuffler(mapperOutput,shuffledOutput);
+        }
         System.out.println("--------END OF MAPPER 2----------");
         System.out.println("--------SHUFFLER 2----------");
-        HashMap<String, ArrayList<Object>> shuffledOutput = StaticClass.shuffler(mapperOutput);
+
         System.out.println(shuffledOutput);
+
         System.out.println("--------END OF SHUFFLER 1----------");
+
         ArrayList<String> listofKeys = new ArrayList<String>(shuffledOutput.keySet());
         ArrayList<ReducerOuput> reducer2Output = new ArrayList<ReducerOuput>();
         System.out.println("-----------------------------------");
         ArrayList<ThreadClass> threads = new ArrayList<ThreadClass>();
         for(int x=0;x<listofKeys.size();x++){
-            ThreadClass threadReducer = new ThreadClass("reducer"+1,shuffledOutput.get(listofKeys.get(x)),listofKeys.get(x),2);
+            ThreadClass threadReducer = new ThreadClass("reducer-2"+x,shuffledOutput.get(listofKeys.get(x)),listofKeys.get(x),2);
             threads.add(threadReducer);
             threadReducer.start();
             try {
@@ -126,25 +164,43 @@ public class Main {
 
     static void runObjective3() throws ParseException {
         System.out.println("-------RUNNING MAPPER 3----");
-        ThreadClass mapperThread = new ThreadClass("mapper1",lines,3);
-        mapperThread.start();
-        try {
-            mapperThread.thread.join();
-        } catch (InterruptedException e) {
-            System.out.println("Main Thread interuppted");
-            e.printStackTrace();
+        // Split the lines in to equal chunks
+        ArrayList<ArrayList<String>> lineChunks = StaticClass.getChuncks(lines,10);
+        ArrayList<ThreadClass> mapperThreads = new ArrayList<ThreadClass>();
+        // for each chunk make a new thread to run mapper 1
+        for (int x=0;x<lineChunks.size();x++){
+            ThreadClass mapperThread = new ThreadClass("mapper3"+x,lineChunks.get(x),3);
+            // add the mapper to the thread list
+            mapperThreads.add(mapperThread);
+            // start the thread
+            mapperThread.start();
+            try {
+                // wait for all threads to finish by joining them
+                mapperThread.thread.join();
+            } catch (InterruptedException e) {
+                System.out.println("Main Thread interuppted");
+                e.printStackTrace();
+            }
         }
-        ArrayList<MapperOutput> mapperOutput = mapperThread.mapperOutput;
+
+        // shuffled output as hashmap
+        HashMap<String, ArrayList<Object>> shuffledOutput = new HashMap<String, ArrayList<Object>>();
+        for (int x=0;x<mapperThreads.size();x++){
+            // get the mapper output from each thread and add it to the shuffled output
+            ArrayList<MapperOutput> mapperOutput = mapperThreads.get(x).mapperOutput;
+            shuffledOutput = StaticClass.shuffler(mapperOutput,shuffledOutput);
+        }
         System.out.println("--------END OF MAPPER 3----------");
         System.out.println("--------SHUFFLER 3----------");
-        HashMap<String, ArrayList<Object>> shuffledOutput = StaticClass.shuffler(mapperOutput);
+
         System.out.println(shuffledOutput);
+
         System.out.println("--------END OF SHUFFLER 3----------");
         ArrayList<String> listofKeys = new ArrayList<String>(shuffledOutput.keySet());
         ArrayList<ReducerOuput> reducer3Output = new ArrayList<ReducerOuput>();
         ArrayList<ThreadClass> threads = new ArrayList<ThreadClass>();
         for(int x=0;x<listofKeys.size();x++){
-            ThreadClass threadReducer = new ThreadClass("reducer"+1,shuffledOutput.get(listofKeys.get(x)),listofKeys.get(x),3);
+            ThreadClass threadReducer = new ThreadClass("reducer-3"+x,shuffledOutput.get(listofKeys.get(x)),listofKeys.get(x),3);
             threads.add(threadReducer);
             threadReducer.start();
             try {

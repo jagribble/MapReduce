@@ -28,6 +28,22 @@ public class StaticClass {
         }
     }
 
+    static HashMap<String,ArrayList<Object>> shuffler(ArrayList<MapperOutput> mapperOutput,HashMap<String, ArrayList<Object>> hashMap){
+       // HashMap<String,ArrayList<Object>> hashMap = new HashMap<String, ArrayList<Object>>();
+        for(int x=0;x<mapperOutput.size();x++){
+            String key = mapperOutput.get(x).getKey();
+            Object value = mapperOutput.get(x).getValue();
+            if(hashMap.containsKey(key)){
+                hashMap.get(key).add(value);
+            } else{
+                ArrayList<Object> objectArrayList = new ArrayList<Object>();
+                objectArrayList.add(value);
+                hashMap.put(key,objectArrayList);
+            }
+        }
+        return hashMap;
+    }
+
     static HashMap<String,ArrayList<Object>> shuffler(ArrayList<MapperOutput> mapperOutput){
         HashMap<String,ArrayList<Object>> hashMap = new HashMap<String, ArrayList<Object>>();
         for(int x=0;x<mapperOutput.size();x++){
@@ -42,6 +58,17 @@ public class StaticClass {
             }
         }
         return hashMap;
+    }
+
+    public static ArrayList<ArrayList<String>> getChuncks(ArrayList<String> bigList,int n){
+        ArrayList<ArrayList<String>> chunks = new ArrayList<ArrayList<String>>();
+
+        for (int i = 0; i < bigList.size(); i += n) {
+            ArrayList<String> chunk = new ArrayList<String>(bigList.subList(i, Math.min(bigList.size(), i + n)));
+            chunks.add(chunk);
+        }
+
+        return chunks;
     }
 
 

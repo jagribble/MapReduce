@@ -74,7 +74,23 @@ public class ThreadClass implements Runnable {
     }
 
 
-
+    PassengerFlight checkForError(String[] row,int x){
+        String passengerId = row[0];
+        String flightId = row[1];
+        String startingAirpot = row[2];
+        String destinationAirport = row[3];
+        Date depatureTime = new Date(Integer.valueOf(row[4]));
+        int flightTime = Integer.valueOf(row[5]);
+        if(passengerId.isEmpty() || startingAirpot.isEmpty() || destinationAirport.isEmpty() || flightTime == 0 ){
+            System.err.println("Error at "+(x+1)+": Values missing");
+        } else if(!StaticClass.airportHashMap.containsKey(startingAirpot)){
+            System.err.println("Error at "+(x+1)+": Starting airport does not exist in airport list ("+startingAirpot+")");
+        } else{
+            PassengerFlight passengerFlight = new PassengerFlight(passengerId,flightId,startingAirpot,destinationAirport,depatureTime,flightTime);
+            return passengerFlight;
+        }
+        return null;
+    }
 
 
     /** Objective 1
@@ -86,29 +102,37 @@ public class ThreadClass implements Runnable {
         ArrayList<MapperOutput> mapValue = new ArrayList<MapperOutput>();
         for(int x=0;x<mapperLines.size();x++){
             String[] row = mapperLines.get(x).split(",");
-            String startingAirpot = row[2];
-            String flightId = row[1];
-            if(startingAirpot.isEmpty()){
-                System.err.println("Error at "+(x+1)+": starting airpot missing");
-            } else if(flightId.isEmpty()){
-                System.err.println("Error at "+(x+1)+": Flight ID missing");
-            }else if(!StaticClass.airportHashMap.containsKey(startingAirpot)){
-                System.err.println("Error at "+(x+1)+": Starting airport does not exist in airport list ("+startingAirpot+")");
-            } else{
-                MapperOutput keyValue = new MapperOutput(startingAirpot,flightId);
-                mapValue.add(keyValue);
+            PassengerFlight passengerFlight = checkForError(row,x);
+                if (passengerFlight != null && !passengerFlight.error){
+                    MapperOutput keyValue = new MapperOutput(row[2],row[1]);
+                    mapValue.add(keyValue);
+                }
             }
+//            String startingAirpot = row[2];
+//            String flightId = row[1];
+//            if(startingAirpot.isEmpty()){
+//                System.err.println("Error at "+(x+1)+": starting airpot missing");
+//            } else if(flightId.isEmpty()){
+//                System.err.println("Error at "+(x+1)+": Flight ID missing");
+//            }else if(!StaticClass.airportHashMap.containsKey(startingAirpot)){
+//                System.err.println("Error at "+(x+1)+": Starting airport does not exist in airport list ("+startingAirpot+")");
+//            } else{
+//                MapperOutput keyValue = new MapperOutput(startingAirpot,flightId);
+//                mapValue.add(keyValue);
+//            }
 
-        }
+
         return mapValue;
     }
 
-    /** Objective 2
-     * Maps over a number of lines passed in and returns (key,value) pairs
+    /** Objective 2 & Objective 3 Mapper
+     * - Maps over a number of lines passed in and returns (key,value) pairs
      *
-     * Create a list of flights based on the Flight id, this output should include the passenger Id, relevant
-     IATA/FAA codes, the departure time, the arrival time (times to be converted to HH:MM:SS format),
-     and the flight times.
+     *  Create a list of flights based on the Flight id, this output should include the passenger Id, relevant
+        IATA/FAA codes, the departure time, the arrival time (times to be converted to HH:MM:SS format),
+         and the flight times.
+     *
+     * - Calculate the number of passengers on each flight.
      *
      * @param mapperLines lines from the list for the single mapper to map.
      * @return array of (key,value) pairs
@@ -119,27 +143,18 @@ public class ThreadClass implements Runnable {
         ArrayList<MapperOutput> mapValue = new ArrayList<MapperOutput>();
         for (int x=0;x<mapperLines.size();x++){
             String[] row = mapperLines.get(x).split(",");
-            String passengerId = row[0];
-            String flightId = row[1];
-            String startingAirpot = row[2];
-            String destinationAirport = row[3];
-            Date depatureTime = new Date(Integer.valueOf(row[4]));
-            int flightTime = Integer.valueOf(row[5]);
-            if(passengerId.isEmpty() || startingAirpot.isEmpty() || destinationAirport.isEmpty() || flightTime == 0 ){
-                System.err.println("Error at "+(x+1)+": Values missing");
-            } else if(!StaticClass.airportHashMap.containsKey(startingAirpot)){
-                System.err.println("Error at "+(x+1)+": Starting airport does not exist in airport list ("+startingAirpot+")");
-            } else{
-                PassengerFlight passengerFlight = new PassengerFlight(passengerId,flightId,startingAirpot,destinationAirport,depatureTime,flightTime);
-                if (!passengerFlight.error){
-                    MapperOutput keyValue = new MapperOutput(flightId,passengerFlight);
-                    //System.out.println("Key: "+keyValue.getKey()+"   ®Value: "+keyValue.getValue());
-                    mapValue.add(keyValue);
-                }
-
+            PassengerFlight passengerFlight = checkForError(row,x);
+            if (passengerFlight != null && !passengerFlight.error){
+                MapperOutput keyValue = new MapperOutput(row[1],passengerFlight);
+                mapValue.add(keyValue);
             }
-
         }
+//                if (!passengerFlight.error){
+//                    MapperOutput keyValue = new MapperOutput(flightId,passengerFlight);
+//                    //System.out.println("Key: "+keyValue.getKey()+"   ®Value: "+keyValue.getValue());
+//                    mapValue.add(keyValue);
+//                }
+
         return mapValue;
     }
 
