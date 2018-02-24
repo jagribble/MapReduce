@@ -38,7 +38,7 @@ public class PassengerFlight {
         this.destinationAirport = dAirport;
         this.depatureTimeString = dTime;
         this.depatureTime = new Date(Integer.valueOf(dTime));
-        this. flightTime = fTime;
+        this.flightTime = fTime;
         checkValidation();
     }
 
@@ -48,23 +48,47 @@ public class PassengerFlight {
         char[] sAirport = this.sourceAirport.toCharArray();
         char[] dAirport = this.destinationAirport.toCharArray();
         char[] dTime = this.depatureTimeString.toCharArray();
+        String fTime = String.valueOf(this.flightTime);
         String errorString = "";
         // check validty of each varible according to their syntax.
         // If true then invalid
-        Boolean passenger = checkValid(passengerSyntax,pId);
-        Boolean flight = checkValid(flightSyntax,fId);
-        Boolean source = checkValid(sourceAirportSyntax,sAirport);
-        Boolean destination = checkValid(destinationAirportSyntax,dAirport);
-        Boolean depatureTime = checkValid(departureTimeSyntax,dTime);
-        if(passenger || flight || source || destination || depatureTime){
-            System.err.println("Error: Syntax Error with Passenger Flight");
+        Boolean passenger = checkInValid(passengerSyntax,pId);
+        Boolean flight = checkInValid(flightSyntax,fId);
+        Boolean source = checkInValid(sourceAirportSyntax,sAirport);
+        Boolean destination = checkInValid(destinationAirportSyntax,dAirport);
+        Boolean depatureTime = checkInValid(departureTimeSyntax,dTime);
+        Boolean flightTime = false;
+        if(fTime.length()<1 || fTime.length()>4){
+            flightTime = true;
+        }
+        if(passenger || flight || source || destination || depatureTime || flightTime){
+            String errorWith = "";
+            if(passenger){
+                errorWith+=", PassengerID";
+            }
+            if(flight){
+                errorWith+=", FlightID";
+            }
+            if(source){
+                errorWith+=", Source Airport";
+            }
+            if(destination){
+                errorWith+=", destination Airport";
+            }
+            if(depatureTime){
+                errorWith+=", depature Time";
+            }
+            if(flightTime){
+                errorWith+=", Flight Time";
+            }
+            System.err.println("Error: Syntax Error with Passenger Flight;"+errorWith);
             this.error = true;
-            this.errorMessage = "Error: Syntax Error with Passenger Flight";
+            this.errorMessage = "Error: Syntax Error with Passenger Flight;"+errorWith;
         }
 
     }
 
-    Boolean checkValid(Syntax[] accepted ,char[] values){
+    Boolean checkInValid(Syntax[] accepted ,char[] values){
         for(int x=0;x<values.length;x++){
             switch (accepted[x]){
                 case CAPATIAL_CASE:
