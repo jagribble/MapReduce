@@ -82,7 +82,7 @@ public class ThreadClass implements Runnable {
         String flightId = row[1];
         String startingAirpot = row[2];
         String destinationAirport = row[3];
-        Date depatureTime = new Date(Integer.valueOf(row[4]));
+        String depatureTime = row[4];
         int flightTime = Integer.valueOf(row[5]);
         if(passengerId.isEmpty() || startingAirpot.isEmpty() || destinationAirport.isEmpty() || flightTime == 0 ){
             this.error += "Error at "+(x+mapperOffset+1)+": Values missing\n";
