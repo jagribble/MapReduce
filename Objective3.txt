@@ -44,7 +44,7 @@ Flight ID:            ATT7791R
 Passengers on Flight: 13
 -----------------------------------
 Flight ID:            XXQ4064B
-Passengers on Flight: 24
+Passengers on Flight: 23
 -----------------------------------
 Flight ID:            MBA8071P
 Passengers on Flight: 15

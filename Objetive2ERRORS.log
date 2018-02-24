@@ -8,7 +8,7 @@ Error at 53: Values missing
 Error at 55: Starting airport does not exist in airport list (UGK)
 Error at 59: Error: Syntax Error with Passenger Flight;, FlightID
 Error at 95: Error: Syntax Error with Passenger Flight;, PassengerID
-Error at 126: Error: Syntax Error with Passenger Flight;, destination Airport
+Error at 126: Destination airport does not exist in airport list ([AS)
 Error at 154: Values missing
 Error at 171: Error: Syntax Error with Passenger Flight;, PassengerID
 Error at 204: Starting airport does not exist in airport list (A;S)
@@ -16,24 +16,25 @@ Error at 237: Values missing
 Error at 262: Error: Syntax Error with Passenger Flight;, FlightID
 Error at 281: Values missing
 Error at 282: Starting airport does not exist in airport list (AM%)
-Error at 304: Error: Syntax Error with Passenger Flight;, destination Airport
-Error at 312: Error: Syntax Error with Passenger Flight;, destination Airport
+Error at 304: Destination airport does not exist in airport list (:IN)
+Error at 312: Destination airport does not exist in airport list (]RA)
 Error at 327: Values missing
-Error at 338: Error: Syntax Error with Passenger Flight;, destination Airport
+Error at 338: Destination airport does not exist in airport list (#MS)
 Error at 361: Error: Syntax Error with Passenger Flight;, PassengerID
 Error at 362: Error: Syntax Error with Passenger Flight;, PassengerID
-Error at 371: Error: Syntax Error with Passenger Flight;, destination Airport
-Error at 373: Error: Syntax Error with Passenger Flight;, destination Airport
+Error at 371: Destination airport does not exist in airport list (MI^)
+Error at 373: Destination airport does not exist in airport list (vAS)
 Error at 382: Starting airport does not exist in airport list (OR8)
 Error at 385: Values missing
-Error at 387: Error: Syntax Error with Passenger Flight;, destination Airport
-Error at 432: Error: Syntax Error with Passenger Flight;, destination Airport
+Error at 387: Destination airport does not exist in airport list (SI|)
+Error at 409: Destination airport does not exist in airport list (FSA)
+Error at 432: Destination airport does not exist in airport list (L}X)
 Error at 441: Starting airport does not exist in airport list (PEe)
 Error at 453: Values missing
-Error at 458: Error: Syntax Error with Passenger Flight;, destination Airport
+Error at 458: Destination airport does not exist in airport list (;AD)
 Error at 461: Starting airport does not exist in airport list (~AN)
-Error at 494: Error: Syntax Error with Passenger Flight;, destination Airport
+Error at 494: Destination airport does not exist in airport list (yEK)
 Error at 498: Values missing
 Error at 500: Values missing
-Error at 509: Error: Syntax Error with Passenger Flight;, destination Airport
+Error at 509: Destination airport does not exist in airport list (vEN)
 Error at 510: Values missing

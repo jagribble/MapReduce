@@ -4,7 +4,6 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class ThreadClass implements Runnable {
 
@@ -90,6 +89,9 @@ public class ThreadClass implements Runnable {
         } else if(!StaticClass.airportHashMap.containsKey(startingAirpot)){
             this.error += "Error at "+(x+mapperOffset+1)+": Starting airport does not exist in airport list ("+startingAirpot+")\n";
             System.err.println("Error at "+(x+mapperOffset+1)+": Starting airport does not exist in airport list ("+startingAirpot+")");
+        } else if(!StaticClass.airportHashMap.containsKey(destinationAirport)){
+            this.error += "Error at "+(x+mapperOffset+1)+": Destination airport does not exist in airport list ("+destinationAirport+")\n";
+            System.err.println("Error at "+(x+mapperOffset+1)+": Destination airport does not exist in airport list ("+destinationAirport+")");
         } else{
             PassengerFlight passengerFlight = new PassengerFlight(passengerId,flightId,startingAirpot,destinationAirport,depatureTime,flightTime);
             if(passengerFlight.error){
