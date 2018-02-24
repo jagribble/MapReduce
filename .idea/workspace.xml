@@ -7,18 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f71ef3c-c7b1-48f5-8d6a-402e95d53ab9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Objective1.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Objective2.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Objective3.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/UserInterface$1.class" afterPath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/UserInterface$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/UserInterface$2.class" afterPath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/UserInterface$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/UserInterface$3.class" afterPath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/UserInterface$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/UserInterface.class" afterPath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/UserInterface.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objetive1ERRORS.log" afterPath="$PROJECT_DIR$/Objetive1ERRORS.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objetive2ERRORS.log" afterPath="$PROJECT_DIR$/Objetive2ERRORS.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objetive3ERRORS.log" afterPath="$PROJECT_DIR$/Objetive3ERRORS.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/gribble/ThreadClass.java" afterPath="$PROJECT_DIR$/src/com/gribble/ThreadClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/gribble/UserInterface.java" afterPath="$PROJECT_DIR$/src/com/gribble/UserInterface.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -48,18 +41,21 @@
       <file leaf-file-name="UserInterface.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/gribble/UserInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="76" column="46" lean-forward="false" selection-start-line="76" selection-start-column="46" selection-end-line="76" selection-end-column="46" />
+            <state relative-caret-position="325">
+              <caret line="91" column="13" lean-forward="true" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2257#2695#0" expanded="true" />
-                <element signature="e#2694#2695#0" expanded="true" />
-                <element signature="e#2781#3264#0" expanded="true" />
-                <element signature="e#3263#3264#0" expanded="true" />
-                <element signature="e#3829#4798#0" expanded="true" />
-                <element signature="e#4797#4798#0" expanded="true" />
-                <element signature="e#5221#5222#0" expanded="true" />
-                <element signature="e#5245#5246#0" expanded="true" />
+                <element signature="e#2322#2760#0" expanded="true" />
+                <element signature="e#2759#2760#0" expanded="true" />
+                <element signature="e#2846#3329#0" expanded="true" />
+                <element signature="e#3328#3329#0" expanded="true" />
+                <element signature="e#3558#3884#0" expanded="true" />
+                <element signature="e#4466#5435#0" expanded="true" />
+                <element signature="e#5434#5435#0" expanded="true" />
+                <element signature="e#5660#6084#0" expanded="true" />
+                <element signature="e#6083#6084#0" expanded="true" />
+                <element signature="e#6523#6524#0" expanded="true" />
+                <element signature="e#6547#6548#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -357,12 +353,12 @@
       <workItem from="1517412676537" duration="5037000" />
       <workItem from="1517509948470" duration="663000" />
       <workItem from="1519080564293" duration="30279000" />
-      <workItem from="1519422830329" duration="13466000" />
+      <workItem from="1519422830329" duration="14509000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62256000" />
+    <option name="totallyTimeSpent" value="63299000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -376,7 +372,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -428,14 +424,17 @@
           <caret line="31" column="7" lean-forward="false" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2257#2695#0" expanded="true" />
-            <element signature="e#2694#2695#0" expanded="true" />
-            <element signature="e#2781#3264#0" expanded="true" />
-            <element signature="e#3263#3264#0" expanded="true" />
-            <element signature="e#3829#4798#0" expanded="true" />
-            <element signature="e#4797#4798#0" expanded="true" />
-            <element signature="e#5221#5222#0" expanded="true" />
-            <element signature="e#5245#5246#0" expanded="true" />
+            <element signature="e#2322#2760#0" expanded="true" />
+            <element signature="e#2759#2760#0" expanded="true" />
+            <element signature="e#2846#3329#0" expanded="true" />
+            <element signature="e#3328#3329#0" expanded="true" />
+            <element signature="e#3558#3884#0" expanded="true" />
+            <element signature="e#4466#5435#0" expanded="true" />
+            <element signature="e#5434#5435#0" expanded="true" />
+            <element signature="e#5660#6084#0" expanded="true" />
+            <element signature="e#6083#6084#0" expanded="true" />
+            <element signature="e#6523#6524#0" expanded="true" />
+            <element signature="e#6547#6548#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -828,18 +827,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/gribble/UserInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="76" column="46" lean-forward="false" selection-start-line="76" selection-start-column="46" selection-end-line="76" selection-end-column="46" />
+        <state relative-caret-position="325">
+          <caret line="91" column="13" lean-forward="true" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2257#2695#0" expanded="true" />
-            <element signature="e#2694#2695#0" expanded="true" />
-            <element signature="e#2781#3264#0" expanded="true" />
-            <element signature="e#3263#3264#0" expanded="true" />
-            <element signature="e#3829#4798#0" expanded="true" />
-            <element signature="e#4797#4798#0" expanded="true" />
-            <element signature="e#5221#5222#0" expanded="true" />
-            <element signature="e#5245#5246#0" expanded="true" />
+            <element signature="e#2322#2760#0" expanded="true" />
+            <element signature="e#2759#2760#0" expanded="true" />
+            <element signature="e#2846#3329#0" expanded="true" />
+            <element signature="e#3328#3329#0" expanded="true" />
+            <element signature="e#3558#3884#0" expanded="true" />
+            <element signature="e#4466#5435#0" expanded="true" />
+            <element signature="e#5434#5435#0" expanded="true" />
+            <element signature="e#5660#6084#0" expanded="true" />
+            <element signature="e#6083#6084#0" expanded="true" />
+            <element signature="e#6523#6524#0" expanded="true" />
+            <element signature="e#6547#6548#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -12,8 +12,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.lang.reflect.Field;
 import java.text.ParseException;
 import java.util.HashMap;
@@ -25,7 +27,7 @@ public class UserInterface extends Application {
     private String helpString = "The file path should point to the folder which contains BOTH " +
             "'Top30_airports_LatLong.csv' & 'AComp_Passenger_data.csv'";
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(final Stage primaryStage) throws Exception {
       //  primaryStage = new Stage();
         try {
             Class<?> macFontFinderClass = Class.forName("com.sun.t2k.MacFontFinder");
@@ -77,8 +79,20 @@ public class UserInterface extends Application {
                 StaticClass.createCSV(dirName+"Objective3.csv",StaticClass.objective3CSVString);
             }
         });
+        final DirectoryChooser outputFolder = new DirectoryChooser();
+        outputFolder.setTitle("Choose output directory");
+        Button fileOutputButton = new Button("Open Folder");
+        fileOutputButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                File file = outputFolder.showDialog(primaryStage);
+                if (file != null) {
+                    outputPath.setText(file.getAbsolutePath()+"/");
+                }
+            }
+        });
         fileButtons.getChildren().addAll(makeTxt,makeCSV);
-        objectiveBoxes.getChildren().addAll(help,obj1Label,obj1,obj2Label,obj2,obj3Label,obj3,outputPathLabel,outputDesc,outputPath,fileButtons);
+        objectiveBoxes.getChildren().addAll(help,obj1Label,obj1,obj2Label,obj2,obj3Label,obj3,outputPathLabel,outputDesc,fileOutputButton,outputPath,fileButtons);
         //-------------------------------
         HBox hBox = new HBox();
 
@@ -112,7 +126,22 @@ public class UserInterface extends Application {
 
             }
         });
-        hBox.getChildren().addAll(label, path,run);
+
+        final DirectoryChooser inputFolder = new DirectoryChooser();
+        inputFolder.setTitle("Choose input directory");
+        Button fileInputButton = new Button("Open Folder");
+        fileInputButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                File file = inputFolder.showDialog(primaryStage);
+                if (file != null) {
+                    path.setText(file.getAbsolutePath()+"/");
+                    System.out.println(file.getAbsolutePath());
+                    //   openFile(file);
+                }
+            }
+        });
+        hBox.getChildren().addAll(label, path,fileInputButton,run);
 
 
         HBox root = new HBox(10d);
