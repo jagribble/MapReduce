@@ -8,5 +8,9 @@ public class ReducerOuput {
         this.reducerString = rString;
         this.reducerCSV = rCSV;
     }
+    // default constructor
+    public ReducerOuput(){
+
+    }
 
 }

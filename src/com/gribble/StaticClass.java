@@ -1,5 +1,7 @@
 package com.gribble;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -86,6 +88,91 @@ public class StaticClass {
         }
         ReducerOuput reducerOuput = new ReducerOuput(reducerString,reducerCSV);
         return reducerOuput;
+    }
+
+    static void createCSV(String name,String[] headings, ArrayList<ReducerOuput> reducerOuputs){
+        FileWriter fileWriter = null;
+        try {
+            fileWriter = new FileWriter(name);
+
+            fileWriter.append(StaticClass.makeCSVRow(headings));
+            for (int x=0;x<reducerOuputs.size();x++){
+                fileWriter.append(reducerOuputs.get(x).reducerCSV);
+            }
+            System.out.println("CSV file was created successfully !!!");
+
+        } catch (Exception e) {
+            System.out.println("Error in CsvFileWriter !!!");
+            e.printStackTrace();
+        } finally {
+
+            try {
+                fileWriter.flush();
+                fileWriter.close();
+            } catch (IOException e) {
+                System.out.println("Error while flushing/closing fileWriter !!!");
+                e.printStackTrace();
+            }
+
+        }
+    }
+
+    static void createCSV(String name,String[] headings, ArrayList<ReducerOuput> reducerOuputs,String[] additionalHeadings, String additionalData){
+        FileWriter fileWriter = null;
+        try {
+            fileWriter = new FileWriter(name);
+
+            fileWriter.append(StaticClass.makeCSVRow(headings));
+            for (int x=0;x<reducerOuputs.size();x++){
+                fileWriter.append(reducerOuputs.get(x).reducerCSV);
+            }
+            fileWriter.append("\n\n");
+            fileWriter.append(StaticClass.makeCSVRow(additionalHeadings));
+
+            fileWriter.append(additionalData);
+
+            System.out.println("CSV file was created successfully !!!");
+
+        } catch (Exception e) {
+            System.out.println("Error in CsvFileWriter !!!");
+            e.printStackTrace();
+        } finally {
+
+            try {
+                fileWriter.flush();
+                fileWriter.close();
+            } catch (IOException e) {
+                System.out.println("Error while flushing/closing fileWriter !!!");
+                e.printStackTrace();
+            }
+
+        }
+    }
+
+    static void makeTxtFile(String nameOfFile,String output){
+        FileWriter fileWriter = null;
+        try {
+            fileWriter = new FileWriter(nameOfFile);
+
+
+            fileWriter.append(output);
+
+            System.out.println("TXT file was created successfully !!!");
+
+        } catch (Exception e) {
+            System.out.println("Error in Txt file writer !!!");
+            e.printStackTrace();
+        } finally {
+
+            try {
+                fileWriter.flush();
+                fileWriter.close();
+            } catch (IOException e) {
+                System.out.println("Error while flushing/closing fileWriter !!!");
+                e.printStackTrace();
+            }
+
+        }
     }
 
     static String makeCSVRow(String[] values){

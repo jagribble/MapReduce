@@ -108,10 +108,11 @@ public class Main {
         }
 
         ReducerOuput missingAirports = StaticClass.missingAirports();
+        reducedOutput += missingAirports.reducerString;
         System.out.println(missingAirports.reducerString);
         String[] headings = {"Airport","Airport Code","Flights From Airport"};
         String[] additionalHeadings = {"Airport Code", "Airport Name"};
-        createCSV("Objective1.csv",headings,reducer1Output,additionalHeadings,missingAirports.reducerCSV);
+        StaticClass.createCSV("Objective1.csv",headings,reducer1Output,additionalHeadings,missingAirports.reducerCSV);
         return reducedOutput;
 
     }
@@ -176,7 +177,7 @@ public class Main {
             reducer2Output.add(output);
         }
         String[] headings = {"Flight ID","Flight Depature Time","Flight time","Source Airport","Destination Airport","Passengers"};
-        createCSV("Objective2.csv",headings,reducer2Output);
+        StaticClass.createCSV("Objective2.csv",headings,reducer2Output);
         return reducedOutput;
     }
 
@@ -239,68 +240,11 @@ public class Main {
             reducer3Output.add(output);
         }
         String[] headings = {"Flight ID","Passengers on Flight"};
-        createCSV("Objective3.csv",headings,reducer3Output);
+        StaticClass.createCSV("Objective3.csv",headings,reducer3Output);
         return reducedOutput;
     }
 
-    static void createCSV(String name,String[] headings, ArrayList<ReducerOuput> reducerOuputs){
-        FileWriter fileWriter = null;
-        try {
-            fileWriter = new FileWriter(name);
 
-            fileWriter.append(StaticClass.makeCSVRow(headings));
-            for (int x=0;x<reducerOuputs.size();x++){
-                fileWriter.append(reducerOuputs.get(x).reducerCSV);
-            }
-            System.out.println("CSV file was created successfully !!!");
-
-        } catch (Exception e) {
-            System.out.println("Error in CsvFileWriter !!!");
-            e.printStackTrace();
-        } finally {
-
-            try {
-                fileWriter.flush();
-                fileWriter.close();
-            } catch (IOException e) {
-                System.out.println("Error while flushing/closing fileWriter !!!");
-                e.printStackTrace();
-            }
-
-        }
-    }
-
-    static void createCSV(String name,String[] headings, ArrayList<ReducerOuput> reducerOuputs,String[] additionalHeadings, String additionalData){
-        FileWriter fileWriter = null;
-        try {
-            fileWriter = new FileWriter(name);
-
-            fileWriter.append(StaticClass.makeCSVRow(headings));
-            for (int x=0;x<reducerOuputs.size();x++){
-                fileWriter.append(reducerOuputs.get(x).reducerCSV);
-            }
-            fileWriter.append("\n\n");
-            fileWriter.append(StaticClass.makeCSVRow(additionalHeadings));
-
-            fileWriter.append(additionalData);
-
-            System.out.println("CSV file was created successfully !!!");
-
-        } catch (Exception e) {
-            System.out.println("Error in CsvFileWriter !!!");
-            e.printStackTrace();
-        } finally {
-
-            try {
-                fileWriter.flush();
-                fileWriter.close();
-            } catch (IOException e) {
-                System.out.println("Error while flushing/closing fileWriter !!!");
-                e.printStackTrace();
-            }
-
-        }
-    }
 
     public static void main(String[] args) {
 	    // write your code here

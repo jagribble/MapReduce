@@ -47,7 +47,16 @@ public class UserInterface extends Application {
         final TextArea obj2 = new TextArea();
         Label obj3Label = new Label("Objective 3");
         final TextArea obj3 = new TextArea();
-        objectiveBoxes.getChildren().addAll(obj1Label,obj1,obj2Label,obj2,obj3Label,obj3);
+        Button makeTxt = new Button("Make Text files");
+        makeTxt.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                StaticClass.makeTxtFile("Objective1.txt",obj1.getText());
+                StaticClass.makeTxtFile("Objective2.txt",obj2.getText());
+                StaticClass.makeTxtFile("Objective3.txt",obj3.getText());
+            }
+        });
+        objectiveBoxes.getChildren().addAll(obj1Label,obj1,obj2Label,obj2,obj3Label,obj3,makeTxt);
         //-------------------------------
         HBox hBox = new HBox();
         hBox.setPadding(new Insets(15, 12, 15, 12));
