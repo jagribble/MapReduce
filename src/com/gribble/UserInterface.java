@@ -3,7 +3,6 @@ package com.gribble;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -54,31 +53,36 @@ public class UserInterface extends Application {
         Label obj3Label = new Label("Objective 3");
         final TextArea obj3 = new TextArea();
 
+        final Label outputPathLabel = new Label("Please enter the path you would like the output files to be saved to");
+        Label outputDesc = new Label("Enter FULL file path of where you expect the output OR leave empty to save in the same folder as the .jar");
+        final TextField outputPath = new TextField();
         HBox fileButtons = new HBox();
         Button makeTxt = new Button("Make Text files");
         makeTxt.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                StaticClass.makeTxtFile("Objective1.txt",obj1.getText());
-                StaticClass.makeTxtFile("Objective2.txt",obj2.getText());
-                StaticClass.makeTxtFile("Objective3.txt",obj3.getText());
+                String dirName = outputPath.getText();
+                StaticClass.makeTxtFile(dirName+"Objective1.txt",obj1.getText());
+                StaticClass.makeTxtFile(dirName+"Objective2.txt",obj2.getText());
+                StaticClass.makeTxtFile(dirName+"Objective3.txt",obj3.getText());
             }
         });
         Button makeCSV = new Button("Make CSV files");
         makeCSV.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                StaticClass.createCSV("Objective1.csv",StaticClass.objective1CSVString);
-                StaticClass.createCSV("Objective2.csv",StaticClass.objective2CSVString);
-                StaticClass.createCSV("Objective3.csv",StaticClass.objective3CSVString);
+                String dirName = outputPath.getText();
+                StaticClass.createCSV(dirName+"Objective1.csv",StaticClass.objective1CSVString);
+                StaticClass.createCSV(dirName+"Objective2.csv",StaticClass.objective2CSVString);
+                StaticClass.createCSV(dirName+"Objective3.csv",StaticClass.objective3CSVString);
             }
         });
         fileButtons.getChildren().addAll(makeTxt,makeCSV);
-        objectiveBoxes.getChildren().addAll(help,obj1Label,obj1,obj2Label,obj2,obj3Label,obj3,fileButtons);
+        objectiveBoxes.getChildren().addAll(help,obj1Label,obj1,obj2Label,obj2,obj3Label,obj3,outputPathLabel,outputDesc,outputPath,fileButtons);
         //-------------------------------
         HBox hBox = new HBox();
-        hBox.setPadding(new Insets(15, 12, 15, 12));
-        hBox.setSpacing(10);
+
+        hBox.setSpacing(4);
         // hbox.setStyle("-fx-background-color: #336699;");
 
         Label label = new Label("Please Enter File path for Files");
@@ -117,7 +121,7 @@ public class UserInterface extends Application {
         border.setTop(hBox);
         border.setCenter(objectiveBoxes);
         root.getChildren().add(border);
-        primaryStage.setScene(new Scene(root,800,600));
+        primaryStage.setScene(new Scene(root,800,700));
         primaryStage.show();
 
     }

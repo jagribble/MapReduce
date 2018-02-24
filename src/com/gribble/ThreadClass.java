@@ -92,6 +92,9 @@ public class ThreadClass implements Runnable {
             System.err.println("Error at "+(x+mapperOffset+1)+": Starting airport does not exist in airport list ("+startingAirpot+")");
         } else{
             PassengerFlight passengerFlight = new PassengerFlight(passengerId,flightId,startingAirpot,destinationAirport,depatureTime,flightTime);
+            if(passengerFlight.error){
+                this.error += "Error at "+(x+mapperOffset+1)+": "+passengerFlight.errorMessage+"\n";
+            }
             return passengerFlight;
         }
         return null;
