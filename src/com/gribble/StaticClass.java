@@ -9,7 +9,9 @@ public class StaticClass {
 
     public static HashMap<String,Airport> airportHashMap = new HashMap<String, Airport>();
     public static ArrayList<String> objective1Airports = new ArrayList<String>();
-
+    public static String objective1CSVString = "";
+    public static String objective2CSVString = "";
+    public static String objective3CSVString = "";
     /**
      * Maps the airports in a hash map to enable them to be esaily looked up
      *
@@ -90,15 +92,13 @@ public class StaticClass {
         return reducerOuput;
     }
 
-    static void createCSV(String name,String[] headings, ArrayList<ReducerOuput> reducerOuputs){
+    static void createCSV(String name,String csvString){
         FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter(name);
 
-            fileWriter.append(StaticClass.makeCSVRow(headings));
-            for (int x=0;x<reducerOuputs.size();x++){
-                fileWriter.append(reducerOuputs.get(x).reducerCSV);
-            }
+            fileWriter.append(csvString);
+
             System.out.println("CSV file was created successfully !!!");
 
         } catch (Exception e) {
@@ -117,37 +117,28 @@ public class StaticClass {
         }
     }
 
-    static void createCSV(String name,String[] headings, ArrayList<ReducerOuput> reducerOuputs,String[] additionalHeadings, String additionalData){
-        FileWriter fileWriter = null;
-        try {
-            fileWriter = new FileWriter(name);
-
-            fileWriter.append(StaticClass.makeCSVRow(headings));
-            for (int x=0;x<reducerOuputs.size();x++){
-                fileWriter.append(reducerOuputs.get(x).reducerCSV);
-            }
-            fileWriter.append("\n\n");
-            fileWriter.append(StaticClass.makeCSVRow(additionalHeadings));
-
-            fileWriter.append(additionalData);
-
-            System.out.println("CSV file was created successfully !!!");
-
-        } catch (Exception e) {
-            System.out.println("Error in CsvFileWriter !!!");
-            e.printStackTrace();
-        } finally {
-
-            try {
-                fileWriter.flush();
-                fileWriter.close();
-            } catch (IOException e) {
-                System.out.println("Error while flushing/closing fileWriter !!!");
-                e.printStackTrace();
-            }
-
+    static String createCSVString(String[] headings, ArrayList<ReducerOuput> reducerOuputs){
+        String csvString = "";
+        csvString += StaticClass.makeCSVRow(headings);
+        for (int x=0;x<reducerOuputs.size();x++){
+            csvString += reducerOuputs.get(x).reducerCSV;
         }
+        return csvString;
     }
+
+    static String createCSVString(String[] headings, ArrayList<ReducerOuput> reducerOuputs,String[] additionalHeadings, String additionalData){
+        String csvString = "";
+        csvString += StaticClass.makeCSVRow(headings);
+        for (int x=0;x<reducerOuputs.size();x++){
+            csvString += reducerOuputs.get(x).reducerCSV;
+        }
+
+        csvString+="\n\n";
+        csvString+=StaticClass.makeCSVRow(additionalHeadings);
+        csvString+=additionalData;
+        return csvString;
+    }
+
 
     static void makeTxtFile(String nameOfFile,String output){
         FileWriter fileWriter = null;

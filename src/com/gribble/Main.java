@@ -10,6 +10,7 @@ public class Main {
     public static ArrayList<String> lines = new ArrayList<String>();
     public static ArrayList<String> airportLines = new ArrayList<String>();
 
+
     static ArrayList<String> getLines(String pathToFile){
         ArrayList<String> arrayOfLines = new ArrayList<String>();
         // store each line in array object
@@ -112,7 +113,7 @@ public class Main {
         System.out.println(missingAirports.reducerString);
         String[] headings = {"Airport","Airport Code","Flights From Airport"};
         String[] additionalHeadings = {"Airport Code", "Airport Name"};
-        StaticClass.createCSV("Objective1.csv",headings,reducer1Output,additionalHeadings,missingAirports.reducerCSV);
+        StaticClass.objective1CSVString = StaticClass.createCSVString(headings,reducer1Output,additionalHeadings,missingAirports.reducerCSV);
         return reducedOutput;
 
     }
@@ -177,7 +178,7 @@ public class Main {
             reducer2Output.add(output);
         }
         String[] headings = {"Flight ID","Flight Depature Time","Flight time","Source Airport","Destination Airport","Passengers"};
-        StaticClass.createCSV("Objective2.csv",headings,reducer2Output);
+        StaticClass.objective2CSVString = StaticClass.createCSVString(headings,reducer2Output);
         return reducedOutput;
     }
 
@@ -240,7 +241,7 @@ public class Main {
             reducer3Output.add(output);
         }
         String[] headings = {"Flight ID","Passengers on Flight"};
-        StaticClass.createCSV("Objective3.csv",headings,reducer3Output);
+        StaticClass.objective3CSVString = StaticClass.createCSVString(headings,reducer3Output);
         return reducedOutput;
     }
 

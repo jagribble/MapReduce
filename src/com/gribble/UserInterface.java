@@ -47,6 +47,7 @@ public class UserInterface extends Application {
         final TextArea obj2 = new TextArea();
         Label obj3Label = new Label("Objective 3");
         final TextArea obj3 = new TextArea();
+        HBox fileButtons = new HBox();
         Button makeTxt = new Button("Make Text files");
         makeTxt.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -56,7 +57,17 @@ public class UserInterface extends Application {
                 StaticClass.makeTxtFile("Objective3.txt",obj3.getText());
             }
         });
-        objectiveBoxes.getChildren().addAll(obj1Label,obj1,obj2Label,obj2,obj3Label,obj3,makeTxt);
+        Button makeCSV = new Button("Make CSV files");
+        makeCSV.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                StaticClass.createCSV("Objective1.csv",StaticClass.objective1CSVString);
+                StaticClass.createCSV("Objective2.csv",StaticClass.objective2CSVString);
+                StaticClass.createCSV("Objective3.csv",StaticClass.objective3CSVString);
+            }
+        });
+        fileButtons.getChildren().addAll(makeTxt,makeCSV);
+        objectiveBoxes.getChildren().addAll(obj1Label,obj1,obj2Label,obj2,obj3Label,obj3,fileButtons);
         //-------------------------------
         HBox hBox = new HBox();
         hBox.setPadding(new Insets(15, 12, 15, 12));
