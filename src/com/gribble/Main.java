@@ -50,13 +50,14 @@ public class Main {
     }
 
     static String runObjective1(){
+        String errorString = "";
         System.out.println("-------RUNNING MAPPER 1----");
         // Split the lines in to equal chunks
         ArrayList<ArrayList<String>> lineChunks = StaticClass.getChuncks(lines,10);
         ArrayList<ThreadClass> mapperThreads = new ArrayList<ThreadClass>();
         // for each chunk make a new thread to run mapper 1
         for (int x=0;x<lineChunks.size();x++){
-            ThreadClass mapperThread = new ThreadClass("mapper1"+x,lineChunks.get(x),1);
+            ThreadClass mapperThread = new ThreadClass("mapper1"+x,lineChunks.get(x),1,x*10);
             // add the mapper to the thread list
             mapperThreads.add(mapperThread);
             // start the thread
@@ -73,6 +74,7 @@ public class Main {
         HashMap<String, ArrayList<Object>> shuffledOutput = new HashMap<String, ArrayList<Object>>();
         for (int x=0;x<mapperThreads.size();x++){
             // get the mapper output from each thread and add it to the shuffled output
+            errorString += mapperThreads.get(x).error;
             ArrayList<MapperOutput> mapperOutput = mapperThreads.get(x).mapperOutput;
             shuffledOutput = StaticClass.shuffler(mapperOutput,shuffledOutput);
         }
@@ -113,19 +115,21 @@ public class Main {
         System.out.println(missingAirports.reducerString);
         String[] headings = {"Airport","Airport Code","Flights From Airport"};
         String[] additionalHeadings = {"Airport Code", "Airport Name"};
+        StaticClass.makeTxtFile("Objetive1ERRORS.log",errorString);
         StaticClass.objective1CSVString = StaticClass.createCSVString(headings,reducer1Output,additionalHeadings,missingAirports.reducerCSV);
         return reducedOutput;
 
     }
 
     static String runObjective2() throws ParseException {
+        String errorString = "";
         System.out.println("-------RUNNING MAPPER 2----");
         // Split the lines in to equal chunks
         ArrayList<ArrayList<String>> lineChunks = StaticClass.getChuncks(lines,10);
         ArrayList<ThreadClass> mapperThreads = new ArrayList<ThreadClass>();
         // for each chunk make a new thread to run mapper 1
         for (int x=0;x<lineChunks.size();x++){
-            ThreadClass mapperThread = new ThreadClass("mapper2"+x,lineChunks.get(x),2);
+            ThreadClass mapperThread = new ThreadClass("mapper2"+x,lineChunks.get(x),2,x*10);
             // add the mapper to the thread list
             mapperThreads.add(mapperThread);
             // start the thread
@@ -143,6 +147,7 @@ public class Main {
         HashMap<String, ArrayList<Object>> shuffledOutput = new HashMap<String, ArrayList<Object>>();
         for (int x=0;x<mapperThreads.size();x++){
             // get the mapper output from each thread and add it to the shuffled output
+            errorString += mapperThreads.get(x).error;
             ArrayList<MapperOutput> mapperOutput = mapperThreads.get(x).mapperOutput;
             shuffledOutput = StaticClass.shuffler(mapperOutput,shuffledOutput);
         }
@@ -177,19 +182,21 @@ public class Main {
             System.out.println("-----------------------------------");
             reducer2Output.add(output);
         }
+        StaticClass.makeTxtFile("Objetive2ERRORS.log",errorString);
         String[] headings = {"Flight ID","Flight Depature Time","Flight time","Source Airport","Destination Airport","Passengers"};
         StaticClass.objective2CSVString = StaticClass.createCSVString(headings,reducer2Output);
         return reducedOutput;
     }
 
     static String runObjective3() throws ParseException {
+        String errorString = "";
         System.out.println("-------RUNNING MAPPER 3----");
         // Split the lines in to equal chunks
         ArrayList<ArrayList<String>> lineChunks = StaticClass.getChuncks(lines,10);
         ArrayList<ThreadClass> mapperThreads = new ArrayList<ThreadClass>();
         // for each chunk make a new thread to run mapper 1
         for (int x=0;x<lineChunks.size();x++){
-            ThreadClass mapperThread = new ThreadClass("mapper3"+x,lineChunks.get(x),3);
+            ThreadClass mapperThread = new ThreadClass("mapper3"+x,lineChunks.get(x),3,x*10);
             // add the mapper to the thread list
             mapperThreads.add(mapperThread);
             // start the thread
@@ -207,6 +214,7 @@ public class Main {
         HashMap<String, ArrayList<Object>> shuffledOutput = new HashMap<String, ArrayList<Object>>();
         for (int x=0;x<mapperThreads.size();x++){
             // get the mapper output from each thread and add it to the shuffled output
+            errorString += mapperThreads.get(x).error;
             ArrayList<MapperOutput> mapperOutput = mapperThreads.get(x).mapperOutput;
             shuffledOutput = StaticClass.shuffler(mapperOutput,shuffledOutput);
         }
@@ -240,6 +248,7 @@ public class Main {
             System.out.println("-----------------------------------");
             reducer3Output.add(output);
         }
+        StaticClass.makeTxtFile("Objetive3ERRORS.log",errorString);
         String[] headings = {"Flight ID","Passengers on Flight"};
         StaticClass.objective3CSVString = StaticClass.createCSVString(headings,reducer3Output);
         return reducedOutput;

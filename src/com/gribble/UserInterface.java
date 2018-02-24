@@ -23,7 +23,8 @@ import java.util.HashMap;
 public class UserInterface extends Application {
 
     private Group root = new Group();
-
+    private String helpString = "The file path should point to the folder which contains BOTH " +
+            "'Top30_airports_LatLong.csv' & 'AComp_Passenger_data.csv'";
     @Override
     public void start(Stage primaryStage) throws Exception {
       //  primaryStage = new Stage();
@@ -41,12 +42,18 @@ public class UserInterface extends Application {
         // ------ Objective boxes ---------
 
         VBox objectiveBoxes = new VBox();
+        Label help = new Label(helpString);
+        help.setWrapText(true);
+
         Label obj1Label = new Label("Objective 1");
         final TextArea obj1 = new TextArea();
+
         Label obj2Label = new Label("Objective 2");
         final TextArea obj2 = new TextArea();
+
         Label obj3Label = new Label("Objective 3");
         final TextArea obj3 = new TextArea();
+
         HBox fileButtons = new HBox();
         Button makeTxt = new Button("Make Text files");
         makeTxt.setOnAction(new EventHandler<ActionEvent>() {
@@ -67,7 +74,7 @@ public class UserInterface extends Application {
             }
         });
         fileButtons.getChildren().addAll(makeTxt,makeCSV);
-        objectiveBoxes.getChildren().addAll(obj1Label,obj1,obj2Label,obj2,obj3Label,obj3,fileButtons);
+        objectiveBoxes.getChildren().addAll(help,obj1Label,obj1,obj2Label,obj2,obj3Label,obj3,fileButtons);
         //-------------------------------
         HBox hBox = new HBox();
         hBox.setPadding(new Insets(15, 12, 15, 12));
@@ -82,20 +89,23 @@ public class UserInterface extends Application {
             public void handle(ActionEvent event) {
                 // window.hide();
                 String dirName = path.getText();
-                Main.getPassangerData(dirName);
-                Main.getAirportData(dirName);
-                StaticClass.getAirportHashMap(Main.airportLines);
-                try {
-                    String reduced1 = Main.runObjective1();
-                    String reduced2 = Main.runObjective2();
-                    String reduced3 = Main.runObjective3();
-                    obj1.setText(reduced1);
-                    obj2.setText(reduced2);
-                    obj3.setText(reduced3);
+                if(!dirName.isEmpty() && dirName.charAt(dirName.length()-1) == '/'){
+                    Main.getPassangerData(dirName);
+                    Main.getAirportData(dirName);
+                    StaticClass.getAirportHashMap(Main.airportLines);
+                    try {
+                        String reduced1 = Main.runObjective1();
+                        String reduced2 = Main.runObjective2();
+                        String reduced3 = Main.runObjective3();
+                        obj1.setText(reduced1);
+                        obj2.setText(reduced2);
+                        obj3.setText(reduced3);
 
-                } catch (ParseException e) {
-                    e.printStackTrace();
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
                 }
+
             }
         });
         hBox.getChildren().addAll(label, path,run);
@@ -107,7 +117,7 @@ public class UserInterface extends Application {
         border.setTop(hBox);
         border.setCenter(objectiveBoxes);
         root.getChildren().add(border);
-        primaryStage.setScene(new Scene(root,600,600));
+        primaryStage.setScene(new Scene(root,800,600));
         primaryStage.show();
 
     }

@@ -12,17 +12,20 @@ public class ThreadClass implements Runnable {
     private String threadName;
     private ArrayList<String> mapperLines;
     private int mode;
+    private int mapperOffset;
     private boolean mapper;
     private ArrayList<Object> reducerValues;
     private String reducerKey;
+    public String error = "";
     public ArrayList<MapperOutput> mapperOutput;
     public ReducerOuput reducerOuput;
 
-    public ThreadClass(String tName,ArrayList<String> mLines,int m){
+    public ThreadClass(String tName,ArrayList<String> mLines,int m,int mOffset){
         this.threadName = tName;
         this.mapperLines = mLines;
         this.mode = m;
         this.mapper = true;
+        this.mapperOffset = mOffset;
     }
 
     public ThreadClass(String tName,ArrayList<Object> rValues,String rKey,int m){
@@ -82,9 +85,11 @@ public class ThreadClass implements Runnable {
         Date depatureTime = new Date(Integer.valueOf(row[4]));
         int flightTime = Integer.valueOf(row[5]);
         if(passengerId.isEmpty() || startingAirpot.isEmpty() || destinationAirport.isEmpty() || flightTime == 0 ){
-            System.err.println("Error at "+(x+1)+": Values missing");
+            this.error += "Error at "+(x+mapperOffset+1)+": Values missing\n";
+            System.err.println("Error at "+(x+mapperOffset+1)+": Values missing");
         } else if(!StaticClass.airportHashMap.containsKey(startingAirpot)){
-            System.err.println("Error at "+(x+1)+": Starting airport does not exist in airport list ("+startingAirpot+")");
+            this.error += "Error at "+(x+mapperOffset+1)+": Starting airport does not exist in airport list ("+startingAirpot+")\n";
+            System.err.println("Error at "+(x+mapperOffset+1)+": Starting airport does not exist in airport list ("+startingAirpot+")");
         } else{
             PassengerFlight passengerFlight = new PassengerFlight(passengerId,flightId,startingAirpot,destinationAirport,depatureTime,flightTime);
             return passengerFlight;
