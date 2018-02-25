@@ -220,8 +220,12 @@ public class ThreadClass implements Runnable {
         String passengerString = "";
         for(int x=0;x<values.size();x++){
             PassengerFlight passenger = (PassengerFlight) values.get(x);
-            reducerString += "                    "+passenger.getPassengerId()+"\r\n";
-            passengerString +=passenger.getPassengerId()+";";
+            // Check if the passenger is in the hashmap if not add it to the list if it is then discard duplicates
+            if(!StaticClass.passengerObjective2Hash.containsKey(passenger.getPassengerId())){
+                StaticClass.passengerObjective2Hash.put(passenger.getPassengerId(),passenger.getPassengerId());
+                reducerString += "                    "+passenger.getPassengerId()+"\r\n";
+                passengerString +=passenger.getPassengerId()+";";
+            }
         }
 
         String[] options = {key,String.valueOf(flight.getDepatureTime()),String.valueOf(flight.getFlightTime()),arrivalTime,
@@ -235,6 +239,16 @@ public class ThreadClass implements Runnable {
     public ReducerOuput reducer3(String key, ArrayList<Object> values){
         PassengerFlight flight = (PassengerFlight) values.get(0);
         String reducerString = "";
+
+        int count = 0;
+        for(int x=0;x<values.size();x++){
+            PassengerFlight passenger = (PassengerFlight) values.get(x);
+            // Check if the passenger is in the hashmap if not add it to the list if it is then discard duplicates
+            if(!StaticClass.passengerObjective3Hash.containsKey(passenger.getPassengerId())){
+                StaticClass.passengerObjective3Hash.put(passenger.getPassengerId(),passenger.getPassengerId());
+                count++;
+            }
+        }
         reducerString += "Flight ID:            "+key+"\r\n";
         reducerString += "Passengers on Flight: "+values.size();
         String[] options = {key,String.valueOf(values.size())};

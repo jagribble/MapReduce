@@ -9,6 +9,8 @@ public class StaticClass {
 
     public static HashMap<String,Airport> airportHashMap = new HashMap<String, Airport>();
     public static ArrayList<String> objective1Airports = new ArrayList<String>();
+    public static HashMap<String,String> passengerObjective3Hash = new HashMap<String, String>();
+    public static HashMap<String,String> passengerObjective2Hash = new HashMap<String, String>();
     public static String objective1CSVString = "";
     public static String objective2CSVString = "";
     public static String objective3CSVString = "";

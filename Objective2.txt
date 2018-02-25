@@ -9,9 +9,7 @@ Passengers:
                     CXN7304ER2
                     POP2875LH2
                     EZC9678QI2
-                    POP2875LH2
                     PAJ3974RK1
-                    JBE2302VO1
                     JBE2302VO1
                     WBE6935NU1
                     VZY2993ME2
@@ -34,12 +32,8 @@ Passengers:
                     MXU9187YC1
                     SPR4484HA0
                     BWI0520BG1
-                    HGO4350KK0
-                    POP2875LH1
                     WBE6935NU0
                     EZC9678QI0
-                    EZC9678QI0
-                    WBE6935NU0
 
 -----------------------------------
 Flight ID:            PME8178S
@@ -62,10 +56,7 @@ Passengers:
                     UES9151GS6
                     CDC0302NN3
                     CXN7304ER6
-                    WYU2010YH5
                     PUD8209OG5
-                    EDV2089LK3
-                    WYU2010YH5
 
 -----------------------------------
 Flight ID:            QHU1140O
@@ -82,16 +73,9 @@ Passengers:
                     JJM4724RF9
                     PUD8209OG7
                     WBE6935NU6
-                    BWI0520BG6
                     LLZ3798PE5
-                    WBE6935NU6
                     JBE2302VO6
-                    LLZ3798PE5
                     CKZ3133BR0
-                    CKZ3133BR0
-                    LLZ3798PE5
-                    SJD8775RZ8
-                    MXU9187YC7
                     SJD8775RZ8
                     PAJ3974RK5
                     CDC0302NN5
@@ -113,14 +97,11 @@ Passengers:
                     UES9151GS9
                     CKZ3133BR2
                     LLZ3798PE6
-                    JBE2302VO7
                     HCA3159QA1
                     BWI0520BG7
                     WBE6935NU7
                     VZY2993ME7
-                    POP2875LH8
                     SPR4484HA9
-                    BWI0520BG7
                     MXU9187YC8
                     YMH6360YP9
                     CXN7304ER7
@@ -141,17 +122,12 @@ Passengers:
                     LLZ3799PE1
                     HGO4351KK3
                     YMH6361YP2
-                    CKZ3133BR3
-                    POP2876LH0
-                    CKZ3133BR3
                     POP2876LH0
                     EZC9679QI5
                     WYU2011YH2
                     CXN7305ER2
                     HCA3159QA4
                     XFG5747ZT8
-                    XFG5747ZT8
-                    JJM4725RF2
 
 -----------------------------------
 Flight ID:            YZO4444S
@@ -186,10 +162,8 @@ Source Airport:       LHR
 Destination Airport:  PEK
 Passengers:           
                     UES9151GS4
-                    UES9151GS4
                     HCA3158QA7
                     CYJ0225CH3
-                    UES9151GS4
                     EDV2089LK1
                     EZC9678QI7
                     WTC9125IE5
@@ -197,18 +171,13 @@ Passengers:
                     DAZ3029XA5
                     JBE2302VO3
                     BWI0520BG3
-                    SPR4484HA6
                     CXN7304ER5
                     CKZ3132BR6
-                    JBE2302VO3
-                    BWI0520BG3
                     IEG9308EA5
                     JJM4724RF5
                     WBE6935NU3
-                    CXN7304ER5
                     PAJ3974RK3
                     YMH6360YP4
-                    WTC9125IE5
 
 -----------------------------------
 Flight ID:            EWH6301Y
@@ -220,12 +189,9 @@ Destination Airport:  DFW
 Passengers:           
                     DAZ3030XA1
                     BWI0520BG9
-                    BWI0520BG9
                     VZY2993ME8
                     EZC9679QI2
-                    VZY2993ME8
                     HGO4351KK2
-                    BWI0520BG9
                     LLZ3798PE8
 
 -----------------------------------
@@ -243,10 +209,7 @@ Passengers:
                     CYJ0225CH6
                     MXU9187YC6
                     HGO4350KK7
-                    HCA3158QA9
-                    HCA3158QA9
                     PUD8209OG6
-                    XFG5747ZT5
                     WBE6935NU5
                     IEG9308EA6
                     LLZ3798PE4
@@ -272,12 +235,9 @@ Passengers:
                     POP2875LH9
                     HGO4351KK0
                     LLZ3798PE7
-                    EZC9679QI1
                     EDV2089LK6
                     IEG9308EA7
-                    WBE6935NU8
                     PUD8210OG0
-                    POP2875LH9
 
 -----------------------------------
 Flight ID:            WSK1289Z
@@ -292,17 +252,14 @@ Passengers:
                     YMH6360YP1
                     DAZ3029XA0
                     JJM4724RF0
-                    EDV2089LK0
                     PIT2755XC0
                     XFG5747ZT0
                     SPR4484HA1
-                    VZY2993ME1
                     VZY2993ME1
                     EZC9678QI1
                     CKZ3132BR1
                     CXN7304ER1
                     HGO4350KK1
-                    JJM4724RF0
                     CDC0302NN0
                     WYU2010YH0
                     ONL0812DH0
@@ -324,7 +281,6 @@ Passengers:
                     CDC0302NN4
                     EDV2089LK4
                     YMH6360YP7
-                    YMH6360YP7
                     LLZ3798PE3
 
 -----------------------------------
@@ -341,15 +297,12 @@ Passengers:
                     IEG9308EA1
                     JJM4724RF1
                     POP2875LH3
-                    EZC9678QI3
                     XFG5747ZT1
                     KKP5277HZ0
                     CXN7304ER3
                     SJD8775RZ3
                     JBE2302VO2
-                    JJM4724RF1
                     DAZ3029XA1
-                    KKP5277HZ0
                     WYU2010YH1
                     HGO4350KK2
 
@@ -367,13 +320,11 @@ Passengers:
                     BWI0520BG5
                     DAZ3029XA6
                     MXU9187YC4
-                    MXU9187YC4
                     PIT2755XC3
                     EDV2089LK2
                     WBE6935NU4
                     EZC9678QI9
                     YMH6360YP5
-                    UES9151GS5
 
 -----------------------------------
 Flight ID:            XXQ4064B
@@ -396,16 +347,12 @@ Passengers:
                     UMH6360YP0
                     YMH6360YP2
                     CYJ0225CH2
-                    PUD8209OG3
                     CKZ3132BR3
                     POP2875LH5
-                    UES9151GS1
-                    PUD8209OG3
                     CDC0302NN1
                     SJD8775RZ4
                     DAZ3029XA3
                     ONL0812DH4
-                    JJM4724RF3
 
 -----------------------------------
 Flight ID:            MBA8071P
@@ -422,14 +369,11 @@ Passengers:
                     LLZ3798PE0
                     WTC9125IE1
                     EZC9678QI4
-                    DAZ3029XA2
                     CKZ3132BR2
                     JJM4724RF2
                     ONL0812DH3
                     CYJ0225CH1
                     PAJ3974RK2
-                    PUD8209OG2
-                    LLZ3798PE0
 
 -----------------------------------
 Flight ID:            BER7172M
@@ -444,16 +388,11 @@ Passengers:
                     WBE6936NU2
                     HGO4351KK4
                     PUD8210OG2
-                    WBE6936NU2
                     SJD8776RZ2
                     SPR4485HA3
-                    SPR4485HA3
                     PAJ3974RK7
-                    DAZ3030XA3
                     WYU2011YH3
-                    PUD8210OG2
                     WTC9126IE0
-                    PUD8210OG2
                     BWI0521BG0
 
 -----------------------------------
@@ -477,7 +416,6 @@ Passengers:
                     CXN7304ER4
                     HCA3158QA6
                     SPR4484HA5
-                    VZY2993ME4
                     YMH6360YP3
 
 -----------------------------------
@@ -529,19 +467,11 @@ Passengers:
                     PUD8210OG3
                     JBE2303VO1
                     DAZ3030XA4
-                    UES9152GS4
-                    PUD8210OG3
                     ONL0813DH0
-                    POP2876LH2
                     CDC0302NN9
                     XFG5747ZT9
                     SPR4485HA5
-                    SPR4485HA5
-                    SPR4485HA5
                     EDV2089LK9
-                    ONL0813DH0
-                    UES9152GS4
-                    KKP5277HZ5
 
 -----------------------------------
 Flight ID:            HUR0974O
@@ -553,7 +483,6 @@ Destination Airport:  PVG
 Passengers:           
                     EDV2089LK5
                     JJM4725RF0
-                    CYJ0225CH7
                     CYJ0225CH7
                     PUD8209OG8
                     CKZ3133BR1
@@ -574,14 +503,10 @@ Passengers:
                     UES9152GS5
                     PIT2755XC6
                     CKZ3133BR4
-                    EZC9679QI6
                     CXN7305ER3
                     DAZ3030XA5
-                    KKP5277HZ6
                     BWI0521BG2
                     JJM4725RF3
-                    BWI0521BG2
-                    SPR4485HA5
 
 -----------------------------------
 Flight ID:            ULZ8130D
@@ -598,24 +523,16 @@ Passengers:
                     UES9152GS2
                     CDC0302NN7
                     PUD8210OG1
-                    PIT2755XC5
                     HCA3159QA3
                     LLZ3798PE9
                     VZY2993ME9
-                    HCA3159QA3
                     WTC9125IE9
                     SPR4485HA1
                     WYU2011YH0
                     EZC9679QI3
-                    VZY2993ME9
-                    CDC0302NN7
                     CXN7305ER0
                     WBE6936NU0
                     JBE2303VO0
-                    DAZ3030XA2
-                    DAZ3030XA2
-                    PUD8210OG1
-                    VZY2993ME9
                     ONL0812DH8
 
 -----------------------------------
@@ -631,13 +548,9 @@ Passengers:
                     HGO4350KK5
                     JBE2302VO4
                     CDC0302NN2
-                    HGO4350KK5
                     POP2875LH7
                     JJM4724RF6
-                    BWI0520BG4
                     EZC9678QI8
-                    CDC0302NN2
-                    JJM4724RF6
                     CKZ3132BR7
 
 -----------------------------------
@@ -655,12 +568,8 @@ Passengers:
                     CKZ3132BR4
                     ONL0812DH5
                     WTC9125IE3
-                    HCA3158QA5
                     VZY2993ME3
                     IEG9308EA3
-                    DAZ3029XA4
-                    WTC9125IE3
-                    WYU2010YH3
                     LLZ3798PE2
 
 -----------------------------------
@@ -671,7 +580,6 @@ Arrival Time:         02:01:00
 Source Airport:       MIA
 Destination Airport:  SFO
 Passengers:           
-                    WTC9125IE2
                     WTC9125IE2
                     SPR4484HA4
                     JJM4724RF4
@@ -693,13 +601,11 @@ Destination Airport:  PEK
 Passengers:           
                     UES9152GS1
                     JJM4725RF1
-                    JJM4725RF1
                     WTC9125IE8
                     CXN7304ER9
                     WYU2010YH9
                     YMH6361YP0
                     HGO4351KK1
-                    CXN7304ER9
                     WBE6935NU9
 
 -----------------------------------
@@ -712,16 +618,12 @@ Destination Airport:  LAS
 Passengers:           
                     BWI0520BG8
                     UES9152GS0
-                    UES9152GS0
                     SJD8775RZ9
                     SPR4485HA0
                     MXU9187YC9
                     PUD8209OG9
                     JBE2302VO8
-                    BWI0520BG8
-                    JBE2302VO8
                     DAZ3029XA9
-                    SPR4485HA0
                     KKP5277HZ4
                     WYU2010YH8
 
@@ -743,7 +645,5 @@ Passengers:
                     BWI0520BG0
                     IEG9308EA0
                     CXN7304ER0
-                    PAJ3974RK0
-                    PAJ3974RK0
 
 -----------------------------------
