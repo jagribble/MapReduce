@@ -58,13 +58,17 @@ public class Main {
         // for each chunk make a new thread to run mapper 1
         for (int x=0;x<lineChunks.size();x++){
             ThreadClass mapperThread = new ThreadClass("mapper1"+x,lineChunks.get(x),1,x*10);
-            // add the mapper to the thread list
-            mapperThreads.add(mapperThread);
             // start the thread
             mapperThread.start();
+            // add the mapper to the thread list
+            mapperThreads.add(mapperThread);
+
+
+        }
+        for(int x=0;x<mapperThreads.size();x++){
             try {
                 // wait for all threads to finish by joining them
-                mapperThread.thread.join();
+                mapperThreads.get(x).thread.join();
             } catch (InterruptedException e) {
                 System.out.println("Main Thread interuppted");
                 e.printStackTrace();
@@ -90,14 +94,18 @@ public class Main {
         // For each key in the shuffled mapper output make a reducer thread and add it to the reducer thread array
         for(int x=0;x<listofKeys.size();x++){
             ThreadClass threadReducer = new ThreadClass("reducer-2"+x,shuffledOutput.get(listofKeys.get(x)),listofKeys.get(x),1);
-            threads.add(threadReducer);
             threadReducer.start();
+            threads.add(threadReducer);
+
+        }
+        for(int x=0;x<threads.size();x++){
             try {
-                threadReducer.thread.join();
+                // wait for all threads to finish by joining them
+                threads.get(x).thread.join();
             } catch (InterruptedException e) {
+                System.out.println("Main Thread interuppted");
                 e.printStackTrace();
             }
-
         }
         String reducedOutput = "";
         // get the output from each reducer thread and add it to the ouput list
@@ -130,13 +138,16 @@ public class Main {
         // for each chunk make a new thread to run mapper 1
         for (int x=0;x<lineChunks.size();x++){
             ThreadClass mapperThread = new ThreadClass("mapper2"+x,lineChunks.get(x),2,x*10);
-            // add the mapper to the thread list
-            mapperThreads.add(mapperThread);
             // start the thread
             mapperThread.start();
+            // add the mapper to the thread list
+            mapperThreads.add(mapperThread);
+
+        }
+        for(int x=0;x<mapperThreads.size();x++){
             try {
                 // wait for all threads to finish by joining them
-                mapperThread.thread.join();
+                mapperThreads.get(x).thread.join();
             } catch (InterruptedException e) {
                 System.out.println("Main Thread interuppted");
                 e.printStackTrace();
@@ -164,14 +175,17 @@ public class Main {
         ArrayList<ThreadClass> threads = new ArrayList<ThreadClass>();
         for(int x=0;x<listofKeys.size();x++){
             ThreadClass threadReducer = new ThreadClass("reducer-2"+x,shuffledOutput.get(listofKeys.get(x)),listofKeys.get(x),2);
-            threads.add(threadReducer);
             threadReducer.start();
+            threads.add(threadReducer);
+        }
+        for(int x=0;x<threads.size();x++){
             try {
-                threadReducer.thread.join();
+                // wait for all threads to finish by joining them
+                threads.get(x).thread.join();
             } catch (InterruptedException e) {
+                System.out.println("Main Thread interuppted");
                 e.printStackTrace();
             }
-
         }
         String reducedOutput = "";
         for(int x=0;x<threads.size();x++){
@@ -197,19 +211,23 @@ public class Main {
         // for each chunk make a new thread to run mapper 1
         for (int x=0;x<lineChunks.size();x++){
             ThreadClass mapperThread = new ThreadClass("mapper3"+x,lineChunks.get(x),3,x*10);
+            // start the thread
+            mapperThread.start();
             // add the mapper to the thread list
             mapperThreads.add(mapperThread);
             // start the thread
             mapperThread.start();
+
+        }
+        for(int x=0;x<mapperThreads.size();x++){
             try {
                 // wait for all threads to finish by joining them
-                mapperThread.thread.join();
+                mapperThreads.get(x).thread.join();
             } catch (InterruptedException e) {
                 System.out.println("Main Thread interuppted");
                 e.printStackTrace();
             }
         }
-
         // shuffled output as hashmap
         HashMap<String, ArrayList<Object>> shuffledOutput = new HashMap<String, ArrayList<Object>>();
         for (int x=0;x<mapperThreads.size();x++){
@@ -229,16 +247,18 @@ public class Main {
         ArrayList<ThreadClass> threads = new ArrayList<ThreadClass>();
         for(int x=0;x<listofKeys.size();x++){
             ThreadClass threadReducer = new ThreadClass("reducer-3"+x,shuffledOutput.get(listofKeys.get(x)),listofKeys.get(x),3);
-            threads.add(threadReducer);
             threadReducer.start();
+            threads.add(threadReducer);
+        }
+        for(int x=0;x<threads.size();x++){
             try {
-                threadReducer.thread.join();
+                // wait for all threads to finish by joining them
+                threads.get(x).thread.join();
             } catch (InterruptedException e) {
+                System.out.println("Main Thread interuppted");
                 e.printStackTrace();
             }
-
         }
-
         String reducedOutput = "";
         for(int x=0;x<threads.size();x++){
             ReducerOuput output = threads.get(x).reducerOuput;

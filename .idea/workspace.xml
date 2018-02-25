@@ -8,18 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0f71ef3c-c7b1-48f5-8d6a-402e95d53ab9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objective2.csv" afterPath="$PROJECT_DIR$/Objective2.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objective3.csv" afterPath="$PROJECT_DIR$/Objective3.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/PassengerFlight$1.class" afterPath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/PassengerFlight$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/PassengerFlight.class" afterPath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/PassengerFlight.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/ThreadClass.class" afterPath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/ThreadClass.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objective2.txt" afterPath="$PROJECT_DIR$/Objective2.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objective3.txt" afterPath="$PROJECT_DIR$/Objective3.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objetive1ERRORS.log" afterPath="$PROJECT_DIR$/Objetive1ERRORS.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objetive2ERRORS.log" afterPath="$PROJECT_DIR$/Objetive2ERRORS.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objetive3ERRORS.log" afterPath="$PROJECT_DIR$/Objetive3ERRORS.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/gribble/PassengerFlight.java" afterPath="$PROJECT_DIR$/src/com/gribble/PassengerFlight.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/gribble/ThreadClass.java" afterPath="$PROJECT_DIR$/src/com/gribble/ThreadClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/gribble/Main.java" afterPath="$PROJECT_DIR$/src/com/gribble/Main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/gribble/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="184" column="65" lean-forward="false" selection-start-line="184" selection-start-column="54" selection-end-line="184" selection-end-column="65" />
+            <state relative-caret-position="218">
+              <caret line="109" column="34" lean-forward="true" selection-start-line="109" selection-start-column="34" selection-end-line="109" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#970#971#0" expanded="true" />
@@ -71,7 +61,7 @@
       <file leaf-file-name="ThreadClass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/gribble/ThreadClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
+            <state relative-caret-position="130">
               <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -83,8 +73,8 @@
       <file leaf-file-name="StaticClass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/gribble/StaticClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="60" lean-forward="false" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
+            <state relative-caret-position="433">
+              <caret line="36" column="53" lean-forward="false" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#411#427#0" expanded="true" />
@@ -134,7 +124,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PassengerFlight.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PassengerFlight.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/gribble/PassengerFlight.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="130">
@@ -183,6 +173,7 @@
       <find>make</find>
       <find>getAir</find>
       <find>errorString</find>
+      <find>shuffler</find>
       <find>err</find>
     </findStrings>
   </component>
@@ -204,10 +195,10 @@
         <option value="$PROJECT_DIR$/src/com/gribble/Layout.fxml" />
         <option value="$PROJECT_DIR$/src/com/gribble/ReducerOuput.java" />
         <option value="$PROJECT_DIR$/src/com/gribble/UserInterface.java" />
-        <option value="$PROJECT_DIR$/src/com/gribble/Main.java" />
         <option value="$PROJECT_DIR$/src/com/gribble/StaticClass.java" />
         <option value="$PROJECT_DIR$/src/com/gribble/ThreadClass.java" />
         <option value="$PROJECT_DIR$/src/com/gribble/PassengerFlight.java" />
+        <option value="$PROJECT_DIR$/src/com/gribble/Main.java" />
       </list>
     </option>
   </component>
@@ -367,12 +358,12 @@
       <workItem from="1517412676537" duration="5037000" />
       <workItem from="1517509948470" duration="663000" />
       <workItem from="1519080564293" duration="30279000" />
-      <workItem from="1519422830329" duration="27606000" />
+      <workItem from="1519422830329" duration="28575000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76396000" />
+    <option name="totallyTimeSpent" value="77365000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -844,22 +835,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gribble/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/gribble/PassengerFlight.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="184" column="65" lean-forward="false" selection-start-line="184" selection-start-column="54" selection-end-line="184" selection-end-column="65" />
+        <state relative-caret-position="130">
+          <caret line="77" column="57" lean-forward="false" selection-start-line="77" selection-start-column="57" selection-end-line="77" selection-end-column="57" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#970#971#0" expanded="true" />
-            <element signature="e#1045#1046#0" expanded="true" />
+            <element signature="e#7032#7033#0" expanded="true" />
+            <element signature="e#7067#7068#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/gribble/StaticClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="60" lean-forward="false" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
+        <state relative-caret-position="433">
+          <caret line="36" column="53" lean-forward="false" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#411#427#0" expanded="true" />
@@ -871,7 +861,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/gribble/ThreadClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
+        <state relative-caret-position="130">
           <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -879,13 +869,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gribble/PassengerFlight.java">
+    <entry file="file://$PROJECT_DIR$/src/com/gribble/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="77" column="57" lean-forward="false" selection-start-line="77" selection-start-column="57" selection-end-line="77" selection-end-column="57" />
+        <state relative-caret-position="218">
+          <caret line="109" column="34" lean-forward="true" selection-start-line="109" selection-start-column="34" selection-end-line="109" selection-end-column="34" />
           <folding>
-            <element signature="e#7032#7033#0" expanded="true" />
-            <element signature="e#7067#7068#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#970#971#0" expanded="true" />
+            <element signature="e#1045#1046#0" expanded="true" />
           </folding>
         </state>
       </provider>
