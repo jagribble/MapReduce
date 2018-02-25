@@ -31,6 +31,7 @@ public class PassengerFlight {
     private float flightTimeHours;
     private Date arraivalTime;
     protected Boolean error = false;
+    protected Boolean errorCorretion = false;
     protected String errorMessage;
 
     public PassengerFlight(String pId,String fId, String sAirport, String dAirport, String dTime, int fTime){
@@ -70,6 +71,14 @@ public class PassengerFlight {
         if(passenger || flight || source || destination || depatureTime || flightTime){
             String errorWith = "";
             if(passenger){
+                int orginalLength = this.passengerId.length();
+                this.passengerId = this.passengerId.replaceAll("\\P{Print}","");
+                int replacementLenth = this.passengerId.length();
+                // if length has changed it has found and unreadable character and replaced it
+                if(orginalLength != replacementLenth && !checkInValid(passengerSyntax,this.passengerId.toCharArray())){
+                    this.errorCorretion = true;
+                    this.errorMessage = "Unreadable character detected and Corrected "+this.passengerId;
+                }
                 errorWith+=", PassengerID";
             }
             if(flight){
@@ -87,9 +96,12 @@ public class PassengerFlight {
             if(flightTime){
                 errorWith+=", Flight Time";
             }
-            System.err.println("Error: Syntax Error with Passenger Flight;"+errorWith);
-            this.error = true;
-            this.errorMessage = "Error: Syntax Error with Passenger Flight;"+errorWith;
+            if(!this.errorCorretion){
+                System.err.println("Error: Syntax Error with Passenger Flight;"+errorWith);
+                this.error = true;
+                this.errorMessage = "Error: Syntax Error with Passenger Flight;"+errorWith;
+            }
+
         }
 
     }

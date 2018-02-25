@@ -22,11 +22,11 @@ Passengers on Flight: 15
 Flight ID:            GMO5938W
 Passengers on Flight: 24
 -----------------------------------
+Flight ID:            SQU6245R
+Passengers on Flight: 19
+-----------------------------------
 Flight ID:            EWH6301Y
 Passengers on Flight: 9
------------------------------------
-Flight ID:            SQU6245R
-Passengers on Flight: 18
 -----------------------------------
 Flight ID:            VYU9214I
 Passengers on Flight: 15

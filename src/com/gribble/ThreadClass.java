@@ -84,18 +84,21 @@ public class ThreadClass implements Runnable {
         String depatureTime = row[4];
         int flightTime = Integer.valueOf(row[5]);
         if(passengerId.isEmpty() || startingAirpot.isEmpty() || destinationAirport.isEmpty() || flightTime == 0 ){
-            this.error += "Error at "+(x+mapperOffset+1)+": Values missing\n";
+            this.error += "Error at "+(x+mapperOffset+1)+": Values missing\r\n";
             System.err.println("Error at "+(x+mapperOffset+1)+": Values missing");
         } else if(!StaticClass.airportHashMap.containsKey(startingAirpot)){
-            this.error += "Error at "+(x+mapperOffset+1)+": Starting airport does not exist in airport list ("+startingAirpot+")\n";
+            this.error += "Error at "+(x+mapperOffset+1)+": Starting airport does not exist in airport list ("+startingAirpot+")\r\n";
             System.err.println("Error at "+(x+mapperOffset+1)+": Starting airport does not exist in airport list ("+startingAirpot+")");
         } else if(!StaticClass.airportHashMap.containsKey(destinationAirport)){
-            this.error += "Error at "+(x+mapperOffset+1)+": Destination airport does not exist in airport list ("+destinationAirport+")\n";
+            this.error += "Error at "+(x+mapperOffset+1)+": Destination airport does not exist in airport list ("+destinationAirport+")\r\n";
             System.err.println("Error at "+(x+mapperOffset+1)+": Destination airport does not exist in airport list ("+destinationAirport+")");
         } else{
             PassengerFlight passengerFlight = new PassengerFlight(passengerId,flightId,startingAirpot,destinationAirport,depatureTime,flightTime);
             if(passengerFlight.error){
-                this.error += "Error at "+(x+mapperOffset+1)+": "+passengerFlight.errorMessage+"\n";
+                this.error += "Error at "+(x+mapperOffset+1)+": "+passengerFlight.errorMessage+"\r\n";
+            }
+            if(passengerFlight.errorCorretion){
+                this.error += "Error Correction at: "+(x+mapperOffset+1)+": "+passengerFlight.errorMessage+"\r\n";
             }
             return passengerFlight;
         }

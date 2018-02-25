@@ -180,21 +180,6 @@ Passengers:
                     YMH6360YP4
 
 -----------------------------------
-Flight ID:            EWH6301Y
-Flight Depature Time: Tue Jan 06 17:22:47 GMT 2015
-Flight time:          1683minutes
-Arrival Time:         21:01:00
-Source Airport:       CAN
-Destination Airport:  DFW
-Passengers:           
-                    DAZ3030XA1
-                    BWI0520BG9
-                    VZY2993ME8
-                    EZC9679QI2
-                    HGO4351KK2
-                    LLZ3798PE8
-
------------------------------------
 Flight ID:            SQU6245R
 Flight Depature Time: Tue Jan 06 17:14:20 GMT 2015
 Flight time:          1049minutes
@@ -202,6 +187,7 @@ Arrival Time:         10:01:00
 Source Airport:       DEN
 Destination Airport:  FRA
 Passengers:           
+                    UES9151GS7
                     JBE2302VO5
                     HCA3158QA9
                     XFG5747ZT5
@@ -217,6 +203,21 @@ Passengers:
                     DAZ3029XA8
                     VZY2993ME6
                     SPR4484HA8
+
+-----------------------------------
+Flight ID:            EWH6301Y
+Flight Depature Time: Tue Jan 06 17:22:47 GMT 2015
+Flight time:          1683minutes
+Arrival Time:         21:01:00
+Source Airport:       CAN
+Destination Airport:  DFW
+Passengers:           
+                    DAZ3030XA1
+                    BWI0520BG9
+                    VZY2993ME8
+                    EZC9679QI2
+                    HGO4351KK2
+                    LLZ3798PE8
 
 -----------------------------------
 Flight ID:            VYU9214I
