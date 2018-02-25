@@ -64,9 +64,9 @@ public class UserInterface extends Application {
             @Override
             public void handle(ActionEvent actionEvent) {
                 String dirName = outputPath.getText();
-                StaticClass.makeTxtFile(dirName+"Objective1.txt",obj1.getText());
-                StaticClass.makeTxtFile(dirName+"Objective2.txt",obj2.getText());
-                StaticClass.makeTxtFile(dirName+"Objective3.txt",obj3.getText());
+                StaticClass.makeTxtFile(dirName+"Objective1.txt",StaticClass.objective1TextString);
+                StaticClass.makeTxtFile(dirName+"Objective2.txt",StaticClass.objective2TextString);
+                StaticClass.makeTxtFile(dirName+"Objective3.txt",StaticClass.objective3TextString);
             }
         });
         Button makeCSV = new Button("Make CSV files");

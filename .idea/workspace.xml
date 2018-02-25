@@ -7,9 +7,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f71ef3c-c7b1-48f5-8d6a-402e95d53ab9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objective2.csv" afterPath="$PROJECT_DIR$/Objective2.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MapReduce_jar/MapReduce.jar" afterPath="$PROJECT_DIR$/out/artifacts/MapReduce_jar/MapReduce.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/Main.class" afterPath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/StaticClass.class" afterPath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/StaticClass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/UserInterface$1.class" afterPath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/UserInterface$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/UserInterface.class" afterPath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/UserInterface.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objective1.txt" afterPath="$PROJECT_DIR$/Objective1.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objective2.txt" afterPath="$PROJECT_DIR$/Objective2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objective3.txt" afterPath="$PROJECT_DIR$/Objective3.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objetive1ERRORS.log" afterPath="$PROJECT_DIR$/Objetive1ERRORS.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objetive2ERRORS.log" afterPath="$PROJECT_DIR$/Objetive2ERRORS.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objetive3ERRORS.log" afterPath="$PROJECT_DIR$/Objetive3ERRORS.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/gribble/Main.java" afterPath="$PROJECT_DIR$/src/com/gribble/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/gribble/StaticClass.java" afterPath="$PROJECT_DIR$/src/com/gribble/StaticClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/gribble/UserInterface.java" afterPath="$PROJECT_DIR$/src/com/gribble/UserInterface.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,8 +36,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/gribble/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="109" column="34" lean-forward="true" selection-start-line="109" selection-start-column="34" selection-end-line="109" selection-end-column="34" />
+            <state relative-caret-position="150">
+              <caret line="127" column="30" lean-forward="false" selection-start-line="127" selection-start-column="30" selection-end-line="127" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#970#971#0" expanded="true" />
@@ -35,24 +47,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserInterface.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserInterface.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/gribble/UserInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="91" column="13" lean-forward="true" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
+            <state relative-caret-position="168">
+              <caret line="68" column="87" lean-forward="false" selection-start-line="68" selection-start-column="87" selection-end-line="68" selection-end-column="87" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2322#2760#0" expanded="true" />
-                <element signature="e#2759#2760#0" expanded="true" />
-                <element signature="e#2846#3329#0" expanded="true" />
-                <element signature="e#3328#3329#0" expanded="true" />
-                <element signature="e#3558#3884#0" expanded="true" />
-                <element signature="e#4466#5435#0" expanded="true" />
-                <element signature="e#5434#5435#0" expanded="true" />
-                <element signature="e#5660#6084#0" expanded="true" />
-                <element signature="e#6083#6084#0" expanded="true" />
-                <element signature="e#6523#6524#0" expanded="true" />
-                <element signature="e#6547#6548#0" expanded="true" />
+                <element signature="e#2322#2814#0" expanded="true" />
+                <element signature="e#2813#2814#0" expanded="true" />
+                <element signature="e#2900#3383#0" expanded="true" />
+                <element signature="e#3382#3383#0" expanded="true" />
+                <element signature="e#3612#3938#0" expanded="true" />
+                <element signature="e#3937#3938#0" expanded="true" />
+                <element signature="e#4520#5489#0" expanded="true" />
+                <element signature="e#5488#5489#0" expanded="true" />
+                <element signature="e#5714#6138#0" expanded="true" />
+                <element signature="e#6137#6138#0" expanded="true" />
+                <element signature="e#6577#6578#0" expanded="true" />
+                <element signature="e#6601#6602#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,8 +74,8 @@
       <file leaf-file-name="ThreadClass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/gribble/ThreadClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+            <state relative-caret-position="-82">
+              <caret line="92" column="139" lean-forward="false" selection-start-line="92" selection-start-column="137" selection-end-line="92" selection-end-column="139" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,16 +83,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StaticClass.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StaticClass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/gribble/StaticClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="101" column="41" lean-forward="true" selection-start-line="101" selection-start-column="41" selection-end-line="101" selection-end-column="41" />
+            <state relative-caret-position="255">
+              <caret line="17" column="45" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#411#427#0" expanded="true" />
-                <element signature="e#509#525#0" expanded="true" />
-                <element signature="e#3107#3115#0" expanded="true" />
+                <element signature="e#442#458#0" expanded="true" />
+                <element signature="e#540#556#0" expanded="true" />
+                <element signature="e#3294#3302#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,16 +113,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="6" column="2" lean-forward="false" selection-start-line="6" selection-start-column="2" selection-end-line="9" selection-end-column="5" />
-              <folding>
-                <element signature="e#238#239#0" expanded="true" />
-                <element signature="e#264#265#0" expanded="true" />
-                <element signature="e#302#303#0" expanded="true" />
-                <element signature="e#332#333#0" expanded="true" />
-                <element signature="e#364#365#0" expanded="true" />
-                <element signature="e#392#393#0" expanded="true" />
-                <element signature="e#434#435#0" expanded="true" />
-                <element signature="e#468#469#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -127,7 +131,7 @@
       <file leaf-file-name="PassengerFlight.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/gribble/PassengerFlight.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
+            <state relative-caret-position="489">
               <caret line="77" column="57" lean-forward="false" selection-start-line="77" selection-start-column="57" selection-end-line="77" selection-end-column="57" />
               <folding>
                 <element signature="e#7032#7033#0" expanded="true" />
@@ -175,6 +179,7 @@
       <find>shuffler</find>
       <find>err</find>
       <find>errorString</find>
+      <find>\n</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -194,11 +199,11 @@
         <option value="$PROJECT_DIR$/src/com/gribble/StaticVaribles.java" />
         <option value="$PROJECT_DIR$/src/com/gribble/Layout.fxml" />
         <option value="$PROJECT_DIR$/src/com/gribble/ReducerOuput.java" />
-        <option value="$PROJECT_DIR$/src/com/gribble/UserInterface.java" />
-        <option value="$PROJECT_DIR$/src/com/gribble/StaticClass.java" />
         <option value="$PROJECT_DIR$/src/com/gribble/ThreadClass.java" />
         <option value="$PROJECT_DIR$/src/com/gribble/PassengerFlight.java" />
+        <option value="$PROJECT_DIR$/src/com/gribble/StaticClass.java" />
         <option value="$PROJECT_DIR$/src/com/gribble/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/gribble/UserInterface.java" />
       </list>
     </option>
   </component>
@@ -358,15 +363,16 @@
       <workItem from="1517412676537" duration="5037000" />
       <workItem from="1517509948470" duration="663000" />
       <workItem from="1519080564293" duration="30279000" />
-      <workItem from="1519422830329" duration="31082000" />
+      <workItem from="1519422830329" duration="33047000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79872000" />
+    <option name="totallyTimeSpent" value="81837000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -376,7 +382,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -436,17 +442,18 @@
           <caret line="31" column="7" lean-forward="false" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2322#2760#0" expanded="true" />
-            <element signature="e#2759#2760#0" expanded="true" />
-            <element signature="e#2846#3329#0" expanded="true" />
-            <element signature="e#3328#3329#0" expanded="true" />
-            <element signature="e#3558#3884#0" expanded="true" />
-            <element signature="e#4466#5435#0" expanded="true" />
-            <element signature="e#5434#5435#0" expanded="true" />
-            <element signature="e#5660#6084#0" expanded="true" />
-            <element signature="e#6083#6084#0" expanded="true" />
-            <element signature="e#6523#6524#0" expanded="true" />
-            <element signature="e#6547#6548#0" expanded="true" />
+            <element signature="e#2322#2814#0" expanded="true" />
+            <element signature="e#2813#2814#0" expanded="true" />
+            <element signature="e#2900#3383#0" expanded="true" />
+            <element signature="e#3382#3383#0" expanded="true" />
+            <element signature="e#3612#3938#0" expanded="true" />
+            <element signature="e#3937#3938#0" expanded="true" />
+            <element signature="e#4520#5489#0" expanded="true" />
+            <element signature="e#5488#5489#0" expanded="true" />
+            <element signature="e#5714#6138#0" expanded="true" />
+            <element signature="e#6137#6138#0" expanded="true" />
+            <element signature="e#6577#6578#0" expanded="true" />
+            <element signature="e#6601#6602#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -467,9 +474,9 @@
           <caret line="66" column="60" lean-forward="false" selection-start-line="66" selection-start-column="60" selection-end-line="66" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#411#427#0" expanded="true" />
-            <element signature="e#509#525#0" expanded="true" />
-            <element signature="e#3107#3115#0" expanded="true" />
+            <element signature="e#442#458#0" expanded="true" />
+            <element signature="e#540#556#0" expanded="true" />
+            <element signature="e#3294#3302#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -486,16 +493,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="2" lean-forward="false" selection-start-line="6" selection-start-column="2" selection-end-line="9" selection-end-column="5" />
-          <folding>
-            <element signature="e#238#239#0" expanded="true" />
-            <element signature="e#264#265#0" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-            <element signature="e#364#365#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#434#435#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -553,16 +551,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="2" lean-forward="false" selection-start-line="6" selection-start-column="2" selection-end-line="9" selection-end-column="5" />
-          <folding>
-            <element signature="e#238#239#0" expanded="true" />
-            <element signature="e#264#265#0" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-            <element signature="e#364#365#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#434#435#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -611,16 +600,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="2" lean-forward="false" selection-start-line="6" selection-start-column="2" selection-end-line="9" selection-end-column="5" />
-          <folding>
-            <element signature="e#238#239#0" expanded="true" />
-            <element signature="e#264#265#0" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-            <element signature="e#364#365#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#434#435#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -669,16 +649,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="9" selection-end-column="5" />
-          <folding>
-            <element signature="e#238#239#0" expanded="true" />
-            <element signature="e#264#265#0" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-            <element signature="e#364#365#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#434#435#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -742,23 +713,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gribble/MapperOutput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="2" lean-forward="false" selection-start-line="6" selection-start-column="2" selection-end-line="9" selection-end-column="5" />
-          <folding>
-            <element signature="e#238#239#0" expanded="true" />
-            <element signature="e#264#265#0" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-            <element signature="e#364#365#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#434#435#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
@@ -797,14 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gribble/ReducerOuput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -813,30 +759,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gribble/UserInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="91" column="13" lean-forward="true" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2322#2760#0" expanded="true" />
-            <element signature="e#2759#2760#0" expanded="true" />
-            <element signature="e#2846#3329#0" expanded="true" />
-            <element signature="e#3328#3329#0" expanded="true" />
-            <element signature="e#3558#3884#0" expanded="true" />
-            <element signature="e#4466#5435#0" expanded="true" />
-            <element signature="e#5434#5435#0" expanded="true" />
-            <element signature="e#5660#6084#0" expanded="true" />
-            <element signature="e#6083#6084#0" expanded="true" />
-            <element signature="e#6523#6524#0" expanded="true" />
-            <element signature="e#6547#6548#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/gribble/PassengerFlight.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
+        <state relative-caret-position="489">
           <caret line="77" column="57" lean-forward="false" selection-start-line="77" selection-start-column="57" selection-end-line="77" selection-end-column="57" />
           <folding>
             <element signature="e#7032#7033#0" expanded="true" />
@@ -845,20 +770,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gribble/MapperOutput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="2" lean-forward="false" selection-start-line="6" selection-start-column="2" selection-end-line="9" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gribble/ReducerOuput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/gribble/ThreadClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+        <state relative-caret-position="-82">
+          <caret line="92" column="139" lean-forward="false" selection-start-line="92" selection-start-column="137" selection-end-line="92" selection-end-column="139" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gribble/StaticClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="45" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#442#458#0" expanded="true" />
+            <element signature="e#540#556#0" expanded="true" />
+            <element signature="e#3294#3302#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/gribble/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="109" column="34" lean-forward="true" selection-start-line="109" selection-start-column="34" selection-end-line="109" selection-end-column="34" />
+        <state relative-caret-position="150">
+          <caret line="127" column="30" lean-forward="false" selection-start-line="127" selection-start-column="30" selection-end-line="127" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#970#971#0" expanded="true" />
@@ -867,15 +821,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gribble/StaticClass.java">
+    <entry file="file://$PROJECT_DIR$/src/com/gribble/UserInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="101" column="41" lean-forward="true" selection-start-line="101" selection-start-column="41" selection-end-line="101" selection-end-column="41" />
+        <state relative-caret-position="168">
+          <caret line="68" column="87" lean-forward="false" selection-start-line="68" selection-start-column="87" selection-end-line="68" selection-end-column="87" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#411#427#0" expanded="true" />
-            <element signature="e#509#525#0" expanded="true" />
-            <element signature="e#3107#3115#0" expanded="true" />
+            <element signature="e#2322#2814#0" expanded="true" />
+            <element signature="e#2813#2814#0" expanded="true" />
+            <element signature="e#2900#3383#0" expanded="true" />
+            <element signature="e#3382#3383#0" expanded="true" />
+            <element signature="e#3612#3938#0" expanded="true" />
+            <element signature="e#3937#3938#0" expanded="true" />
+            <element signature="e#4520#5489#0" expanded="true" />
+            <element signature="e#5488#5489#0" expanded="true" />
+            <element signature="e#5714#6138#0" expanded="true" />
+            <element signature="e#6137#6138#0" expanded="true" />
+            <element signature="e#6577#6578#0" expanded="true" />
+            <element signature="e#6601#6602#0" expanded="true" />
           </folding>
         </state>
       </provider>

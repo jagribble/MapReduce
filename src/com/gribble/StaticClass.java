@@ -1,5 +1,6 @@
 package com.gribble;
 
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,6 +15,9 @@ public class StaticClass {
     public static String objective1CSVString = "";
     public static String objective2CSVString = "";
     public static String objective3CSVString = "";
+    public static String objective1TextString = "";
+    public static String objective2TextString = "";
+    public static String objective3TextString = "";
     /**
      * Maps the airports in a hash map to enable them to be esaily looked up
      *
@@ -87,7 +91,7 @@ public class StaticClass {
         String reducerCSV = "";
         for(int x=0;x<allAirports.size();x++){
             reducerString += "          "+allAirports.get(x)+","+
-                    StaticClass.airportHashMap.get(allAirports.get(x)).getAirportName()+"\n";
+                    StaticClass.airportHashMap.get(allAirports.get(x)).getAirportName()+"\r\n";
             reducerCSV += allAirports.get(x) +","+StaticClass.airportHashMap.get((allAirports.get(x))).getAirportName()+"\n";
         }
         ReducerOuput reducerOuput = new ReducerOuput(reducerString,reducerCSV);
@@ -143,9 +147,9 @@ public class StaticClass {
 
 
     static void makeTxtFile(String nameOfFile,String output){
-        FileWriter fileWriter = null;
+        BufferedWriter fileWriter = null;
         try {
-            fileWriter = new FileWriter(nameOfFile);
+            fileWriter = new BufferedWriter(new FileWriter(nameOfFile,true));
 
 
             fileWriter.append(output);

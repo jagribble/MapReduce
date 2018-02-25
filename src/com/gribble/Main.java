@@ -125,6 +125,7 @@ public class Main {
         String[] additionalHeadings = {"Airport Code", "Airport Name"};
         StaticClass.makeTxtFile("Objetive1ERRORS.log",errorString);
         StaticClass.objective1CSVString = StaticClass.createCSVString(headings,reducer1Output,additionalHeadings,missingAirports.reducerCSV);
+        StaticClass.objective1TextString = reducedOutput;
         return reducedOutput;
 
     }
@@ -199,6 +200,7 @@ public class Main {
         StaticClass.makeTxtFile("Objetive2ERRORS.log",errorString);
         String[] headings = {"Flight ID","Flight Depature Time","Flight time","Arrival Time","Source Airport","Destination Airport","Passengers"};
         StaticClass.objective2CSVString = StaticClass.createCSVString(headings,reducer2Output);
+        StaticClass.objective2TextString = reducedOutput;
         return reducedOutput;
     }
 
@@ -271,6 +273,7 @@ public class Main {
         StaticClass.makeTxtFile("Objetive3ERRORS.log",errorString);
         String[] headings = {"Flight ID","Passengers on Flight"};
         StaticClass.objective3CSVString = StaticClass.createCSVString(headings,reducer3Output);
+        StaticClass.objective3TextString = reducedOutput;
         return reducedOutput;
     }
 
