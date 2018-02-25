@@ -28,6 +28,8 @@ public class PassengerFlight {
     private Date depatureTime;
     private String depatureTimeString;
     private int flightTime;
+    private float flightTimeHours;
+    private Date arraivalTime;
     protected Boolean error = false;
     protected String errorMessage;
 
@@ -37,9 +39,13 @@ public class PassengerFlight {
         this.sourceAirport = sAirport;
         this.destinationAirport = dAirport;
         this.depatureTimeString = dTime;
-        this.depatureTime = new Date(Integer.valueOf(dTime));
+        this.depatureTime = new Date(Long.valueOf(dTime)*1000);
         this.flightTime = fTime;
         checkValidation();
+        this.flightTimeHours = (float) Math.floor(this.flightTime/60);
+        int minutues = (int) Math.floor(((this.flightTime - this.flightTimeHours)/60)/60);
+        long arrrivalMili = this.depatureTime.getTime() + (this.flightTime * 60 *1000);
+        this.arraivalTime = new Date(arrrivalMili);
     }
 
     private void checkValidation(){
@@ -163,5 +169,9 @@ public class PassengerFlight {
 
     public void setFlightTime(int flightTime) {
         this.flightTime = flightTime;
+    }
+
+    public Date getArraivalTime() {
+        return arraivalTime;
     }
 }

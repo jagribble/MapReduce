@@ -183,7 +183,7 @@ public class Main {
             reducer2Output.add(output);
         }
         StaticClass.makeTxtFile("Objetive2ERRORS.log",errorString);
-        String[] headings = {"Flight ID","Flight Depature Time","Flight time","Source Airport","Destination Airport","Passengers"};
+        String[] headings = {"Flight ID","Flight Depature Time","Flight time","Arrival Time","Source Airport","Destination Airport","Passengers"};
         StaticClass.objective2CSVString = StaticClass.createCSVString(headings,reducer2Output);
         return reducedOutput;
     }
