@@ -193,9 +193,9 @@ public class ThreadClass implements Runnable {
         }
         String airportName = StaticClass.airportHashMap.get(key).getAirportName();
         StaticClass.objective1Airports.add(key);
-        String reducerString = "Airport:              "+airportName+"\n";
-        reducerString += "Airport Code:         "+ key+"\n";
-        reducerString += "Flights From Airport: "+ flights.size()+"\n";
+        String reducerString = "Airport:              "+airportName+"\r\n";
+        reducerString += "Airport Code:         "+ key+"\r\n";
+        reducerString += "Flights From Airport: "+ flights.size()+"\r\n";
         String[] options = {airportName,key,String.valueOf(flights.size())};
         String rCSV = StaticClass.makeCSVRow(options);
         return new ReducerOuput(reducerString,rCSV);
@@ -210,17 +210,17 @@ public class ThreadClass implements Runnable {
        // String departureTime = new SimpleDateFormat("yyyy-MM-dd").format(flight.getDepatureTime());
         String arrivalTime = new SimpleDateFormat("HH:MM:SS").format(flight.getArraivalTime());
         String reducerString = "";
-        reducerString += "Flight ID:            "+key+"\n";
-        reducerString += "Flight Depature Time: "+flight.getDepatureTime()+"\n";
-        reducerString += "Flight time:          "+flight.getFlightTime()+"minutes\n";
-        reducerString += "Arrival Time:         "+arrivalTime+"\n";
-        reducerString += "Source Airport:       "+flight.getSourceAirport()+"\n";
-        reducerString += "Destination Airport:  "+flight.getDestinationAirport()+"\n";
-        reducerString += "Passengers:           "+"\n";
+        reducerString += "Flight ID:            "+key+"\r\n";
+        reducerString += "Flight Depature Time: "+flight.getDepatureTime()+"\r\n";
+        reducerString += "Flight time:          "+flight.getFlightTime()+"minutes\r\n";
+        reducerString += "Arrival Time:         "+arrivalTime+"\r\n";
+        reducerString += "Source Airport:       "+flight.getSourceAirport()+"\r\n";
+        reducerString += "Destination Airport:  "+flight.getDestinationAirport()+"\r\n";
+        reducerString += "Passengers:           "+"\r\n";
         String passengerString = "";
         for(int x=0;x<values.size();x++){
             PassengerFlight passenger = (PassengerFlight) values.get(x);
-            reducerString += "                    "+passenger.getPassengerId()+"\n";
+            reducerString += "                    "+passenger.getPassengerId()+"\r\n";
             passengerString +=passenger.getPassengerId()+";";
         }
 
@@ -235,7 +235,7 @@ public class ThreadClass implements Runnable {
     public ReducerOuput reducer3(String key, ArrayList<Object> values){
         PassengerFlight flight = (PassengerFlight) values.get(0);
         String reducerString = "";
-        reducerString += "Flight ID:            "+key+"\n";
+        reducerString += "Flight ID:            "+key+"\r\n";
         reducerString += "Passengers on Flight: "+values.size();
         String[] options = {key,String.valueOf(values.size())};
         String rCSV = StaticClass.makeCSVRow(options);

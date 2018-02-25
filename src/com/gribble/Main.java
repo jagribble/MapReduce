@@ -105,7 +105,7 @@ public class Main {
             ReducerOuput output = threads.get(x).reducerOuput;
             reducedOutput+= output.reducerString;
             System.out.println(output.reducerString);
-            reducedOutput += "\n-----------------------------------\n";
+            reducedOutput += "\r\n-----------------------------------\r\n";
             System.out.println("-----------------------------------");
             reducer1Output.add(output);
         }
@@ -178,7 +178,7 @@ public class Main {
             ReducerOuput output = threads.get(x).reducerOuput;
             reducedOutput += output.reducerString;
             System.out.println(output.reducerString);
-            reducedOutput += "\n-----------------------------------\n";
+            reducedOutput += "\r\n-----------------------------------\r\n";
             System.out.println("-----------------------------------");
             reducer2Output.add(output);
         }
@@ -244,7 +244,7 @@ public class Main {
             ReducerOuput output = threads.get(x).reducerOuput;
             System.out.println(output.reducerString);
             reducedOutput+=output.reducerString;
-            reducedOutput += "\n-----------------------------------\n";
+            reducedOutput += "\r\n-----------------------------------\r\n";
             System.out.println("-----------------------------------");
             reducer3Output.add(output);
         }
