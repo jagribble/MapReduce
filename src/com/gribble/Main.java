@@ -11,6 +11,12 @@ public class Main {
     public static ArrayList<String> airportLines = new ArrayList<String>();
 
 
+    /**
+     * Get lines from file
+     *
+     * @param pathToFile    path to read file from
+     * @return
+     */
     static ArrayList<String> getLines(String pathToFile){
         ArrayList<String> arrayOfLines = new ArrayList<String>();
         // store each line in array object
@@ -29,31 +35,52 @@ public class Main {
         return arrayOfLines;
     }
 
+    /**
+     * Get airport data locally
+     */
     public static void getAirportData(){
         airportLines = getLines("./src/Top30_airports_LatLong.csv");
     }
 
+    /**
+     * Get airport data from Directory
+     *
+     * @param dirName   directory specified by user
+     */
     public static void getAirportData(String dirName){
         airportLines = getLines(dirName+"/Top30_airports_LatLong.csv");
         System.out.println(airportLines);
     }
 
+    /**
+     * Get Passenger Data locally
+     */
     public static void getPassangerData(){
         // read in file
         lines = getLines("./src/AComp_Passenger_data.csv");
     }
 
+    /**
+     * Get passenger data from directory
+     *
+     * @param dirName   directory specified by user
+     */
     public static void getPassangerData(String dirName){
         // read in file
         lines = getLines(dirName+"/AComp_Passenger_data.csv");
         System.out.println(lines);
     }
 
+    /**
+     * Objetive 1
+     *
+     * @return ReducerString output
+     */
     static String runObjective1(){
         String errorString = "";
         System.out.println("-------RUNNING MAPPER 1----");
         // Split the lines in to equal chunks
-        ArrayList<ArrayList<String>> lineChunks = StaticClass.getChuncks(lines,10);
+        ArrayList<ArrayList<String>> lineChunks = StaticClass.getChunks(lines,10);
         ArrayList<ThreadClass> mapperThreads = new ArrayList<ThreadClass>();
         // for each chunk make a new thread to run mapper 1
         for (int x=0;x<lineChunks.size();x++){
@@ -130,11 +157,17 @@ public class Main {
 
     }
 
+    /**
+     * Objective 2
+     *
+     * @return Reducer String output
+     * @throws ParseException
+     */
     static String runObjective2() throws ParseException {
         String errorString = "";
         System.out.println("-------RUNNING MAPPER 2----");
         // Split the lines in to equal chunks
-        ArrayList<ArrayList<String>> lineChunks = StaticClass.getChuncks(lines,10);
+        ArrayList<ArrayList<String>> lineChunks = StaticClass.getChunks(lines,10);
         ArrayList<ThreadClass> mapperThreads = new ArrayList<ThreadClass>();
         // for each chunk make a new thread to run mapper 1
         for (int x=0;x<lineChunks.size();x++){
@@ -204,11 +237,17 @@ public class Main {
         return reducedOutput;
     }
 
+    /**
+     * Objective 3
+     *
+     * @return  Reducer String output
+     * @throws ParseException
+     */
     static String runObjective3() throws ParseException {
         String errorString = "";
         System.out.println("-------RUNNING MAPPER 3----");
         // Split the lines in to equal chunks
-        ArrayList<ArrayList<String>> lineChunks = StaticClass.getChuncks(lines,10);
+        ArrayList<ArrayList<String>> lineChunks = StaticClass.getChunks(lines,10);
         ArrayList<ThreadClass> mapperThreads = new ArrayList<ThreadClass>();
         // for each chunk make a new thread to run mapper 1
         for (int x=0;x<lineChunks.size();x++){
@@ -278,7 +317,10 @@ public class Main {
     }
 
 
-
+    /**
+     * Run in command line
+     * @param args
+     */
     public static void main(String[] args) {
 	    // write your code here
         getAirportData();

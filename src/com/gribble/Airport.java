@@ -14,6 +14,14 @@ public class Airport {
     private Float latitude;
     private Float longitude;
 
+    /**
+     * Constructor for Airport
+     *
+     * @param name  name of airport
+     * @param code  airport code
+     * @param lat   latitude
+     * @param lon   longitude
+     */
     public Airport(String name, String code, Float lat, Float lon){
         this.airportName = name;
         this.airportCode = code;
@@ -21,35 +29,13 @@ public class Airport {
         this.longitude = lon;
     }
 
+    /**
+     * Get airport name
+     * @return
+     */
     public String getAirportName() {
         return airportName;
     }
 
-    public void setAirportName(String airportName) {
-        this.airportName = airportName;
-    }
 
-    public String getAirportCode() {
-        return airportCode;
-    }
-
-    public void setAirportCode(String airportCode) {
-        this.airportCode = airportCode;
-    }
-
-    public Float getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(Float latitude) {
-        this.latitude = latitude;
-    }
-
-    public Float getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(Float longitude) {
-        this.longitude = longitude;
-    }
 }

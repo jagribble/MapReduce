@@ -34,6 +34,18 @@ public class PassengerFlight {
     protected Boolean errorCorretion = false;
     protected String errorMessage;
 
+
+    /**
+     * PassengerFlight Constructor
+     *
+     *
+     * @param pId   passengerId
+     * @param fId   FlightId
+     * @param sAirport  source airport
+     * @param dAirport  destination airport
+     * @param dTime destination time
+     * @param fTime flight time
+     */
     public PassengerFlight(String pId,String fId, String sAirport, String dAirport, String dTime, int fTime){
         this.passengerId = pId;
         this.flightId = fId;
@@ -49,6 +61,9 @@ public class PassengerFlight {
         this.arraivalTime = new Date(arrrivalMili);
     }
 
+    /**
+     * Check if instance is valid
+     */
     private void checkValidation(){
         char[] pId = this.passengerId.toCharArray();
         char[] fId = this.flightId.toCharArray();
@@ -70,6 +85,7 @@ public class PassengerFlight {
         }
         if(passenger || flight || source || destination || depatureTime || flightTime){
             String errorWith = "";
+            // if each varible is true add the column name to the error with to output what columns are errored
             if(passenger){
                 int orginalLength = this.passengerId.length();
                 this.passengerId = this.passengerId.replaceAll("\\P{Print}","");
@@ -106,6 +122,13 @@ public class PassengerFlight {
 
     }
 
+    /**
+     * Check if the value is valid
+     *
+     * @param accepted  accepted values using Syntax enum
+     * @param values    value
+     * @return  if true then invalid
+     */
     Boolean checkInValid(Syntax[] accepted ,char[] values){
         for(int x=0;x<values.length;x++){
             switch (accepted[x]){
@@ -135,54 +158,55 @@ public class PassengerFlight {
         return false;
     }
 
+    /**
+     * Get Passenger ID
+     * @return  PassengerID
+     */
     public String getPassengerId() {
         return passengerId;
     }
 
-    public void setPassengerId(String passengerId) {
-        this.passengerId = passengerId;
-    }
-
-    public String getFlightId() {
-        return flightId;
-    }
-
-    public void setFlightId(String flightId) {
-        this.flightId = flightId;
-    }
-
+    /**
+     * Get Source Airport
+     *
+     * @return  Source Airport
+     */
     public String getSourceAirport() {
         return sourceAirport;
     }
 
-    public void setSourceAirport(String sourceAirport) {
-        this.sourceAirport = sourceAirport;
-    }
 
+    /**
+     * Get Destination Airport
+     * @return  Destination Airport
+     */
     public String getDestinationAirport() {
         return destinationAirport;
     }
 
-    public void setDestinationAirport(String destinationAirport) {
-        this.destinationAirport = destinationAirport;
-    }
 
+    /**
+     * Get departure time
+     * @return departure time
+     */
     public Date getDepatureTime() {
         return depatureTime;
     }
 
-    public void setDepatureTime(Date depatureTime) {
-        this.depatureTime = depatureTime;
-    }
 
+    /**
+     * Get Flight Time
+     * @return flight time
+     */
     public int getFlightTime() {
         return flightTime;
     }
 
-    public void setFlightTime(int flightTime) {
-        this.flightTime = flightTime;
-    }
 
+    /**
+     * Get arrival date
+     * @return  arrival date
+     */
     public Date getArraivalTime() {
         return arraivalTime;
     }

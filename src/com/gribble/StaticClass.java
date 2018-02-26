@@ -38,8 +38,15 @@ public class StaticClass {
         }
     }
 
+    /**
+     * shuffle and sorts the mapper outputs
+     *
+     * @param mapperOutput  list of mapper outputs
+     * @param hashMap       existing hashmap to add values too
+     * @return
+     */
     static HashMap<String,ArrayList<Object>> shuffler(ArrayList<MapperOutput> mapperOutput,HashMap<String, ArrayList<Object>> hashMap){
-       // HashMap<String,ArrayList<Object>> hashMap = new HashMap<String, ArrayList<Object>>();
+
         for(int x=0;x<mapperOutput.size();x++){
             String key = mapperOutput.get(x).getKey();
             Object value = mapperOutput.get(x).getValue();
@@ -54,23 +61,15 @@ public class StaticClass {
         return hashMap;
     }
 
-    static HashMap<String,ArrayList<Object>> shuffler(ArrayList<MapperOutput> mapperOutput){
-        HashMap<String,ArrayList<Object>> hashMap = new HashMap<String, ArrayList<Object>>();
-        for(int x=0;x<mapperOutput.size();x++){
-            String key = mapperOutput.get(x).getKey();
-            Object value = mapperOutput.get(x).getValue();
-            if(hashMap.containsKey(key)){
-                hashMap.get(key).add(value);
-            } else{
-                ArrayList<Object> objectArrayList = new ArrayList<Object>();
-                objectArrayList.add(value);
-                hashMap.put(key,objectArrayList);
-            }
-        }
-        return hashMap;
-    }
 
-    public static ArrayList<ArrayList<String>> getChuncks(ArrayList<String> bigList,int n){
+    /**
+     * Split the lines of data into smaller chunks
+     *
+     * @param bigList   list of all rows
+     * @param n         number of rows in each chunk
+     * @return
+     */
+    public static ArrayList<ArrayList<String>> getChunks(ArrayList<String> bigList, int n){
         ArrayList<ArrayList<String>> chunks = new ArrayList<ArrayList<String>>();
 
         for (int i = 0; i < bigList.size(); i += n) {
@@ -81,7 +80,11 @@ public class StaticClass {
         return chunks;
     }
 
-
+    /**
+     * Calculate which airports are missing from objective 1
+     *
+     * @return airports missing
+     */
     static ReducerOuput missingAirports(){
         ArrayList<String> allAirports = new ArrayList<String>(StaticClass.airportHashMap.keySet());
         for (int x=0;x<StaticClass.objective1Airports.size();x++){
@@ -98,6 +101,12 @@ public class StaticClass {
         return reducerOuput;
     }
 
+    /**
+     * Create a csv from the input
+     *
+     * @param name      name of file
+     * @param csvString csv string
+     */
     static void createCSV(String name,String csvString){
         FileWriter fileWriter = null;
         try {
@@ -123,6 +132,13 @@ public class StaticClass {
         }
     }
 
+    /**
+     * Create a csvString from the inputs
+     *
+     * @param headings  headings for the CSV
+     * @param reducerOuputs outputs from the reducer
+     * @return
+     */
     static String createCSVString(String[] headings, ArrayList<ReducerOuput> reducerOuputs){
         String csvString = "";
         csvString += StaticClass.makeCSVRow(headings);
@@ -132,6 +148,15 @@ public class StaticClass {
         return csvString;
     }
 
+    /**
+     * Create a csvString from the inputs with additional data
+     *
+     * @param headings  headings for the CSV
+     * @param reducerOuputs outputs from the reducer
+     * @param additionalHeadings    additional heading
+     * @param additionalData    additional data
+     * @return
+     */
     static String createCSVString(String[] headings, ArrayList<ReducerOuput> reducerOuputs,String[] additionalHeadings, String additionalData){
         String csvString = "";
         csvString += StaticClass.makeCSVRow(headings);
@@ -145,7 +170,12 @@ public class StaticClass {
         return csvString;
     }
 
-
+    /**
+     * Make text file from inputs
+     *
+     * @param nameOfFile    name of file
+     * @param output    string to output to file
+     */
     static void makeTxtFile(String nameOfFile,String output){
         BufferedWriter fileWriter = null;
         try {
@@ -172,6 +202,12 @@ public class StaticClass {
         }
     }
 
+    /**
+     * Make a csv row from the values given
+     *
+     * @param values    values to be made into csv row
+     * @return
+     */
     static String makeCSVRow(String[] values){
         String csvString = "";
         for(int x=0;x<values.length;x++){

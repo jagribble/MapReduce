@@ -3,7 +3,6 @@ package com.gribble;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -20,15 +19,17 @@ import java.lang.reflect.Field;
 import java.text.ParseException;
 import java.util.HashMap;
 
-
+/**
+ * Create user interface to interact with MapReduce functions
+ */
 public class UserInterface extends Application {
 
-    private Group root = new Group();
+
     private String helpString = "The file path should point to the folder which contains BOTH " +
             "'Top30_airports_LatLong.csv' & 'AComp_Passenger_data.csv'";
     @Override
     public void start(final Stage primaryStage) throws Exception {
-      //  primaryStage = new Stage();
+
         try {
             Class<?> macFontFinderClass = Class.forName("com.sun.t2k.MacFontFinder");
             Field psNameToPathMap = macFontFinderClass.getDeclaredField("psNameToPathMap");
@@ -154,9 +155,6 @@ public class UserInterface extends Application {
         primaryStage.show();
 
     }
-
-
-
 
 
     public static void main(String[] args){
