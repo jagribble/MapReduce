@@ -211,7 +211,7 @@ public class ThreadClass implements Runnable {
     public ReducerOuput reducer2(String key, ArrayList<Object> values){
         PassengerFlight flight = (PassengerFlight) values.get(0);
        // String departureTime = new SimpleDateFormat("yyyy-MM-dd").format(flight.getDepatureTime());
-        String arrivalTime = new SimpleDateFormat("HH:MM:SS").format(flight.getArraivalTime());
+        String arrivalTime = new SimpleDateFormat("HH:mm:ss").format(flight.getArraivalTime());
         String reducerString = "";
         reducerString += "Flight ID:            "+key+"\r\n";
         reducerString += "Flight Depature Time: "+flight.getDepatureTime()+"\r\n";

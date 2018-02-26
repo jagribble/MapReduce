@@ -149,7 +149,7 @@ public class StaticClass {
     static void makeTxtFile(String nameOfFile,String output){
         BufferedWriter fileWriter = null;
         try {
-            fileWriter = new BufferedWriter(new FileWriter(nameOfFile,true));
+            fileWriter = new BufferedWriter(new FileWriter(nameOfFile));
 
 
             fileWriter.append(output);

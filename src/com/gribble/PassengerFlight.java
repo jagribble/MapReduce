@@ -45,7 +45,7 @@ public class PassengerFlight {
         checkValidation();
         this.flightTimeHours = (float) Math.floor(this.flightTime/60);
         int minutues = (int) Math.floor(((this.flightTime - this.flightTimeHours)/60)/60);
-        long arrrivalMili = this.depatureTime.getTime() + (this.flightTime * 60 *1000);
+        long arrrivalMili = this.depatureTime.getTime() + ((this.flightTime * 60) *1000);
         this.arraivalTime = new Date(arrrivalMili);
     }
 
