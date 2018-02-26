@@ -508,7 +508,6 @@ Passengers:
                     DAZ3030XA5
                     BWI0521BG2
                     JJM4725RF3
-                    SPR4485HA5
 
 -----------------------------------
 Flight ID:            ULZ8130D

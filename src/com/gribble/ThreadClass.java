@@ -254,7 +254,7 @@ public class ThreadClass implements Runnable {
         }
         reducerString += "Flight ID:            "+key+"\r\n";
         reducerString += "Passengers on Flight: "+count;
-        String[] options = {key,String.valueOf(values.size())};
+        String[] options = {key,String.valueOf(count)};
         String rCSV = StaticClass.makeCSVRow(options);
         return new ReducerOuput(reducerString,rCSV);
 
