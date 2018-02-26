@@ -1,5 +1,8 @@
 package com.gribble;
 
+/**
+ * Class to store output of reducer
+ */
 public class ReducerOuput {
     protected String reducerString;
     protected String reducerCSV;

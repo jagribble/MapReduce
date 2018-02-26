@@ -5,6 +5,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+/**
+ * Class to run threads for mapper and reducer
+ */
 public class ThreadClass implements Runnable {
 
     public Thread thread;

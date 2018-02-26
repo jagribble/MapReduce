@@ -1,5 +1,8 @@
 package com.gribble;
 
+/**
+ * Class to store information about Airports
+ */
 public class Airport {
 
     /**

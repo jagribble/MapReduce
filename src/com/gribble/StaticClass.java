@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * Static class for static functions and variables
+ */
 public class StaticClass {
 
     public static HashMap<String,Airport> airportHashMap = new HashMap<String, Airport>();

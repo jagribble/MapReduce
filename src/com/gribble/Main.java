@@ -5,6 +5,9 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * Main with functions to call each objective
+ */
 public class Main {
 
     public static ArrayList<String> lines = new ArrayList<String>();

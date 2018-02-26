@@ -1,5 +1,8 @@
 package com.gribble;
 
+/**
+ * Class to store Key Value Pair
+ */
 public class MapperOutput {
     private String key;
     private Object value;

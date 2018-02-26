@@ -2,7 +2,9 @@ package com.gribble;
 
 import java.util.Date;
 
-
+/**
+ * Class to store information about a passenger flight
+ */
 public class PassengerFlight {
 
     /**
