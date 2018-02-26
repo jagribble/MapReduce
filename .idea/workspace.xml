@@ -7,19 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f71ef3c-c7b1-48f5-8d6a-402e95d53ab9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objective2.csv" afterPath="$PROJECT_DIR$/Objective2.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MapReduce_jar/MapReduce.jar" afterPath="$PROJECT_DIR$/out/artifacts/MapReduce_jar/MapReduce.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/StaticClass.class" afterPath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/StaticClass.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/ThreadClass.class" afterPath="$PROJECT_DIR$/out/production/MapReduce/com/gribble/ThreadClass.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objective1.txt" afterPath="$PROJECT_DIR$/Objective1.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objective2.txt" afterPath="$PROJECT_DIR$/Objective2.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objective3.txt" afterPath="$PROJECT_DIR$/Objective3.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objetive1ERRORS.log" afterPath="$PROJECT_DIR$/Objetive1ERRORS.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objetive2ERRORS.log" afterPath="$PROJECT_DIR$/Objetive2ERRORS.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objetive3ERRORS.log" afterPath="$PROJECT_DIR$/Objetive3ERRORS.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/gribble/PassengerFlight.java" afterPath="$PROJECT_DIR$/src/com/gribble/PassengerFlight.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/gribble/StaticClass.java" afterPath="$PROJECT_DIR$/src/com/gribble/StaticClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/gribble/ThreadClass.java" afterPath="$PROJECT_DIR$/src/com/gribble/ThreadClass.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -73,8 +60,8 @@
       <file leaf-file-name="ThreadClass.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/gribble/ThreadClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-132">
-              <caret line="213" column="56" lean-forward="false" selection-start-line="213" selection-start-column="56" selection-end-line="213" selection-end-column="56" />
+            <state relative-caret-position="365">
+              <caret line="255" column="55" lean-forward="false" selection-start-line="255" selection-start-column="55" selection-end-line="255" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -366,12 +353,12 @@
       <workItem from="1517412676537" duration="5037000" />
       <workItem from="1517509948470" duration="663000" />
       <workItem from="1519080564293" duration="30279000" />
-      <workItem from="1519422830329" duration="36842000" />
+      <workItem from="1519422830329" duration="37149000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85632000" />
+    <option name="totallyTimeSpent" value="85939000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -845,8 +832,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/gribble/ThreadClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-132">
-          <caret line="213" column="56" lean-forward="false" selection-start-line="213" selection-start-column="56" selection-end-line="213" selection-end-column="56" />
+        <state relative-caret-position="365">
+          <caret line="255" column="55" lean-forward="false" selection-start-line="255" selection-start-column="55" selection-end-line="255" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
